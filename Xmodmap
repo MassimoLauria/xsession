@@ -1,0 +1,40 @@
+!
+! Massimo Lauria's Xmodmap file.
+!
+
+!!!! Media keyboard (should not be useful on modern linux distributions)
+keycode 178 = XF86HomePage
+keycode 160 = XF86AudioMute
+keycode 176 = XF86AudioRaiseVolume
+keycode 174 = XF86AudioLowerVolume
+
+
+!!!! Activate compose key
+keycode 135 = Multi_key
+
+
+!!!! (Left) Control and Caps_Lock swapped  (good for Emacs)
+!
+remove Lock = Caps_Lock
+remove Control = Control_L
+!keysym Control_L = Caps_Lock
+!keysym Caps_Lock = Control_L
+add Control = Caps_Lock
+add Control = Control_L
+
+
+!!!! Esc and Caps_Lock swapped (good for vim)
+!
+!remove Lock = Caps_Lock
+!keysym Escape = Caps_Lock
+!keysym Caps_Lock = Escape 
+!add    Lock = Caps_Lock
+
+
+!!!! Right shift repeated on Caps_Lock (no use)
+!
+!remove lock = Caps_Lock
+!keycode 66 = Shift_R
+!remove shift = Shift_R
+!add shift = Shift_R
+

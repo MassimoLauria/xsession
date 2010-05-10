@@ -1,0 +1,136 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Author: Massimo Lauria
+# Date: 2010-05-10
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h 
+# The XK_ is not needed. 
+#
+# List of modifier (on my keyboard): 
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+#
+# Another way to specifie a key is to use 'xev' and set the 
+# keycode with c:nnn or the modifier with m:nnn where nnn is 
+# the keycode or the state returned by xev 
+#
+# This file is created by xbindkey_config 
+# The structure is : 
+# # Remark 
+# "command" 
+# m:xxx + c:xxx 
+# Shift+... 
+
+
+
+
+#keystate_numlock = enable
+#keystate_scrolllock = enable
+#keystate_capslock = enable
+
+
+
+"xbindkeys_show"
+   control+shift + q
+
+# set directly keycode (here control + f with my keyboard)
+#"xterm"
+#   c:41 + m:0x4
+
+# specify a mouse button
+#"xterm"
+#   control + b:2
+
+#Remark
+#"xterm"
+#    m:0x40 + c:28
+#    Mod4 + t 
+
+
+##
+## Application Launchers
+##
+
+# Editor
+"emacsclient -n -c"
+     Mod4 + e
+
+# Unicode Charmap
+"gucharmap"
+     Mod4 + u
+
+# Web browser
+"~/config/scripts/firefox-fixtheme.sh"
+     Mod4 + w
+
+"~/config/scripts/firefox-fixtheme.sh"
+     XF86Mail
+
+
+# File manager
+"pcmanfm"
+     Mod4 + f
+
+"pcmanfm"
+     XF86HomePage
+
+
+# Command chooser
+"exec `dmenu_path | dmenu -i -nf '#dcdcdc' -nb '#3f3f3f' -sb '#a6c292' -sf black -fn '*-terminus-r-*-16-140-*-m-*'`"
+      Mod4 + c
+  
+
+# Terminal
+"xterm"
+     Mod4 + Return
+
+# Screen Lock
+"xscreensaver-command -lock; xset dpms force off"
+     Mod4 + Pause
+
+##
+## Audio Controls
+## 
+
+# Raise the Master Volume
+# m:000 c:174
+"~/config/scripts/vol.sh up"
+    XF86AudioRaiseVolume
+
+
+
+# Lower the Master Volume
+# m:000 c:176
+"~/config/scripts/vol.sh down"
+    XF86AudioLowerVolume
+
+# Mute/Unmute
+# m:000 c:160
+"~/config/scripts/vol.sh mute"
+    XF86AudioMute
+
+# Mute/Unmute Monitor Speaker (yes, it's is ugly...)
+# m:040 c:160
+"~/config/scripts/vol.sh hdmi"
+    Mod4 + XF86AudioMute
+
+
+# (MPD) Previous Song
+"mpc prev"
+    XF86AudioPrev
+
+# (MPD) Next Song
+"mpc next"
+    XF86AudioNext
+
+# (MPD) Play/Pause
+"mpc toggle"
+    XF86AudioPlay
+
+# True fullscreen
+#"wmctrl -r :ACTIVE: -b toggle,fullscreen"
+#    Mod4 + m
+
