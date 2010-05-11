@@ -33,6 +33,8 @@ AUTOSTARTLOG=.x-autostart.log
 
 export SDL_MOUSE_RELATIVE=0
 
+# Umask settings
+umask 0077
 
 # Xorg settings
 xsetroot -solid black

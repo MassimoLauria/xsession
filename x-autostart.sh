@@ -13,8 +13,9 @@
 # WEBCAM=yes/no
 # MUSIC=yes/no
 # SAGEMATH=yes/no
-# SSHIDENTITY=yes/no
+# SSHIDENTITY=filename
 # DROPBOX=yes/no
+# WALLPAPER=filename
 #
 
 
@@ -31,7 +32,7 @@ fi
 ## Load X composition
 echo -n "XSession Autostart... X Composition "
 if [ -f /usr/bin/xcompmgr ]; then
-    xcompmgr -D5 -fc &
+    xcompmgr -D1 -fcC 2> /dev/null &
     echo "ON"
 else
     echo "OFF"
@@ -131,6 +132,7 @@ fi
 ## Sage Math Environment
 echo -n "XSession Autostart... SageMath Environment "
 if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then 
+    export SAGE_BROWSER=firefox
     sage -notebook open_viewer=False &
     echo "ON"
 else
