@@ -5,6 +5,7 @@
 
 
 # Load host based customization.
+. ./personal/xsession.local
 #
 # available options are
 #
@@ -15,7 +16,7 @@
 # SSHIDENTITY=yes/no
 # DROPBOX=yes/no
 #
-source ~/personal/xsession.local
+
 
 ## Restore sound settings
 echo -n "XSession Autostart... Sound "
