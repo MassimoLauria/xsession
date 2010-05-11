@@ -1,32 +1,155 @@
 #!/bin/sh
 
-## Delay startup to allow WM to settle.
-# sleep 1
-
-## Root desktop
-alsactl -f .asound.conf restore &
-xcompmgr -D5 -fc &
-xscreensaver -no-splash &
-
-## Keyboards/OSD shortcuts
-xbindkeys -f ~/config/xclients/xbindkeysrc  &
-/usr/lib/notify-osd/notify-osd &
-
-## Desktop services
-unclutter -noevents -idle 2 -root &
-#ivman &
-
-# Desktop applets
-padevchooser &
-dropbox start &
-nm-applet --sm-disable &
-cameramonitor &
-
-# Autostart applications
-mpd &
-emacs --daemon &
-sage -notebook open_viewer=False &
-sonata &
-ssh-add ~/personal/ssh/id_dsa
+#
+# Massimo Lauria 2010-05-11
 
 
+# Load host based customization.
+#
+# available options are
+#
+# WIFI=yes/no
+# WEBCAM=yes/no
+# MUSIC=yes/no
+# SAGEMATH=yes/no
+# SSHIDENTITY=yes/no
+# DROPBOX=yes/no
+#
+source ~/personal/xsession.local
+
+## Restore sound settings
+echo -n "XSession Autostart... Sound "
+if [ -f /sbin/alsactl -a -f .asounf.conf ]; then
+    alsactl -f .asound.conf restore &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+## Load X composition
+echo -n "XSession Autostart... X Composition "
+if [ -f /usr/bin/xcompmgr ]; then
+    xcompmgr -D5 -fc &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+## Start XScreensaver
+echo -n "XSession Autostart... X Screensaver "
+if [ -f /usr/bin/xscreensaver ]; then
+    xscreensaver -no-splash &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+## Keyboard shortcuts
+echo -n "XSession Autostart... XBindkeys "
+if [ -f /usr/bin/xbindkeys ]; then
+    xbindkeys &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+## OSD 
+echo -n "XSession Autostart... OSD daemon "
+if [ -f /usr/lib/notify-osd/notify-osd ]; then
+    /usr/lib/notify-osd/notify-osd &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+## Ban mouse as soon as possible
+echo -n "XSession Autostart... Ban Idle Mouse "
+if [ -f /usr/bin/unclutter ]; then
+    unclutter -noevents -idle 2 -root &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+## Ban mouse as soon as possible
+echo -n "XSession Autostart... Pulseaudio Applet "
+if [ -f /usr/bin/padevchooser ]; then
+    padevchooser &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+###### Conditional applications #########
+
+## Wifi Manager
+echo -n "XSession Autostart... Wifi Monitor "
+if [ x$WIFI = "xyes" -a -f /usr/bin/nm-applet ]; then 
+    nm-applet --sm-disable &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+## Webcan Monitor
+echo -n "XSession Autostart... Webcam Monitor "
+if [ x$WEBCAM = "xyes" -a -f /usr/bin/cameramonitor ]; then
+    cameramonitor &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+## Music Daemon
+echo -n "XSession Autostart... Music Daemon "
+if [ x$MUSIC = "xyes" -a -f /usr/bin/mpd ]; then 
+    mpd &
+    if [ -f /usr/bin/sonata ]; then
+        sonata &
+    fi
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+## Emacs Daemon
+echo -n "XSession Autostart... Emacs Daemon "
+if [ -f /usr/bin/emacs ]; then 
+    emacs --daemon &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+## Sage Math Environment
+echo -n "XSession Autostart... SageMath Environment "
+if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then 
+    sage -notebook open_viewer=False &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+## SSH identity load
+echo -n "XSession Autostart... SSH Identity "
+if [ x$SSHIDENTITY = "xyes" -a -f "./personal/ssh/id_dsa" ]; then 
+    ssh-add ./personal/ssh/id_dsa
+    echo "LOADED"
+else
+    echo "NOT LOADED"
+fi
+
+## Dropbox daemon
+echo -n "XSession Autostart... Dropbox Daemon "
+if [ x$DROPBOX = "xyes" -a -f /usr/bin/dropbox ]; then 
+    dropbox start &
+    echo "ON"
+else
+    echo "OFF"
+fi

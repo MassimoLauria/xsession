@@ -29,7 +29,7 @@ XMODMAP=~/config/xclients/Xmodmap
 XRESOURCES=~/config/xclients/Xresources
 XAUTOSTART=~/config/xclients/x-autostart.sh
 XAUTOSTOP=~/config/xclients/x-autostop.sh
-
+AUTOSTARTLOG=.x-autostart.log
 
 export SDL_MOUSE_RELATIVE=0
 
@@ -48,13 +48,12 @@ xset dpms 300 300 300
 #-- Desktop Session -- 
 #startlxde
 #gnome-session
-
+#startkde
 
 #-- Plain WMs --
 # Lauch my X session (delayed)
-$XAUTOSTART & 
+$XAUTOSTART > $AUTOSTARTLOG & 
 
-#xmonad
 awesome
 
 $XAUTOSTOP
