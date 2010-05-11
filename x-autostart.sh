@@ -139,8 +139,8 @@ fi
 
 ## SSH identity load
 echo -n "XSession Autostart... SSH Identity "
-if [ x$SSHIDENTITY = "xyes" -a -f "./personal/ssh/id_dsa" ]; then 
-    ssh-add ./personal/ssh/id_dsa
+if [ -n "$SSHIDENTITY" -a -f $SSHIDENTITY ]; then 
+    ssh-add $SSHIDENTITY
     echo "LOADED"
 else
     echo "NOT LOADED"
