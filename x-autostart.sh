@@ -16,9 +16,11 @@
 # SSHIDENTITY=filename
 # DROPBOX=yes/no
 # WALLPAPER=filename
-#
+# LAPTOP=yes/no
 
+NOOUTPUT=2>&1 > /dev/null
 
+ 
 ## Restore sound settings
 echo -n "XSession Autostart... Sound "
 if [ -f /sbin/alsactl -a -f .asounf.conf ]; then
@@ -92,6 +94,16 @@ fi
 echo -n "XSession Autostart... Wifi Monitor "
 if [ x$WIFI = "xyes" -a -f /usr/bin/nm-applet ]; then 
     nm-applet --sm-disable &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+## Power manager
+echo -n "XSession Autostart... Gnome Power manager "
+if [ x$LAPTOP = "xyes" -a -f /usr/bin/gnome-power-manager ]; then 
+    gnome-power-manager &
     echo "ON"
 else
     echo "OFF"
