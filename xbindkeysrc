@@ -1,4 +1,4 @@
-###########################
+########################### -*- conf-unix -*-
 # xbindkeys configuration #
 ###########################
 #
@@ -59,8 +59,8 @@
      Mod4 + e
 
 # Unicode Charmap
-"gucharmap"
-     Mod4 + u
+#"gucharmap"
+#     Mod4 + u
 
 # Web browser
 "~/config/scripts/firefox-fixtheme.sh"
