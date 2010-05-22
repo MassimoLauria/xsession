@@ -21,8 +21,9 @@
 #
 
 # User's environment
-source ~/config/shell/shenv-common
-source ~/config/shell/shenv-gnupg
+[ -f ~/config/shell/shenv-common    ] && . ~/config/shell/shenv-common
+[ -f ~/config/shell/shenv-gnupg     ] && . ~/config/shell/shenv-gnupg
+[ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
 
 # Files
 XMODMAP=~/config/xclients/Xmodmap 

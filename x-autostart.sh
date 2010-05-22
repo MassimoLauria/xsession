@@ -4,10 +4,13 @@
 # Massimo Lauria 2010-05-11
 
 
-# Load host based customization.
-. ./personal/xsession.local
+# User's environment
+[ -f ~/config/shell/shenv-common    ] && . ~/config/shell/shenv-common
+[ -f ~/config/shell/shenv-gnupg     ] && . ~/config/shell/shenv-gnupg
+[ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
+
 #
-# available options are
+# available options are (among others)
 #
 # WIFI=yes/no
 # WEBCAM=yes/no
