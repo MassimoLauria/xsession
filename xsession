@@ -26,10 +26,10 @@
 [ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
 
 # Files
-XMODMAP=~/config/xclients/Xmodmap 
-XRESOURCES=~/config/xclients/Xresources
-XAUTOSTART=~/config/xclients/x-autostart.sh
-XAUTOSTOP=~/config/xclients/x-autostop.sh
+XMODMAP=~/config/xsession/Xmodmap 
+XRESOURCES=~/config/xsession/Xresources
+XAUTOSTART=~/config/xsession/x-autostart.sh
+ XAUTOSTOP=~/config/xsession/x-autostop.sh
 AUTOSTARTLOG=.x-autostart.log
 
 export SDL_MOUSE_RELATIVE=0
@@ -39,7 +39,7 @@ umask 0077
 
 # Xorg settings
 xsetroot -solid black
-xset +fp /home/massimo/.fonts
+[ -d ~/config/fonts ] && xset +fp ~/config/fonts
 xset fp rehash
 xset b off
 xset dpms 300 300 300 
