@@ -20,6 +20,7 @@
 # DROPBOX=yes/no
 # WALLPAPER=filename
 # LAPTOP=yes/no
+# SPEED=fast/slow
 
 NOOUTPUT=2>&1 > /dev/null
 
@@ -36,7 +37,7 @@ fi
 
 ## Load X composition
 echo -n "XSession Autostart... X Composition "
-if [ -f /usr/bin/xcompmgr ]; then
+if [ x$SPEED = "xfast" -a -f /usr/bin/xcompmgr ]; then
     xcompmgr -D1 -fcC 2> /dev/null &
     echo "ON"
 else
