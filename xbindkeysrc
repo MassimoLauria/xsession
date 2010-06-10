@@ -79,7 +79,7 @@
 
 
 # Command chooser
-"exec `dmenu_path | dmenu -i -nf '#dcdcdc' -nb '#3f3f3f' -sb '#a6c292' -sf black -fn '*-terminus-r-*-16-140-*-m-*'`"
+"exec `dmenu_path | dmenu -p 'Launch app:' -i -nf '#dcdcdc' -nb '#3f3f3f' -sb '#a6c292' -sf black -fn '*-terminus-r-*-16-140-*-m-*'`"
       Mod4 + c
   
 
