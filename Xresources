@@ -8,6 +8,7 @@
 
 /* Applications with dedicated file */
 #include "xterm.xrdb"
+#include "urxvt.xrdb"
 #include "emacs.xrdb"
 #include "xscreensaver.xrdb"
 
