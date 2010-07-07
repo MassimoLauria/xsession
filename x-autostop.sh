@@ -9,3 +9,7 @@ which alsactl && alsactl -f .asound.conf store &
 pkill -TERM -u $USER mpd
 pkill -TERM -u $USER emacs
 pkill -TERM -u $USER cameramonitor
+
+# Stop SageMath if it is running
+SAGEPID=`cat ~/lavori/notebook.sagenb/twistd.pid`
+kill -9 $SAGEPID
