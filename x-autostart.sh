@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #
-# Massimo Lauria 2010-05-11
+# Massimo Lauria 2010-07-07
 
 
 # User's environment
@@ -149,7 +149,7 @@ fi
 echo -n "XSession Autostart... SageMath Environment "
 if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then 
     export SAGE_BROWSER=firefox
-    sage -notebook open_viewer=False &
+    sage -n lavori/notebook open_viewer=False &
     echo "ON"
 else
     echo "OFF"
