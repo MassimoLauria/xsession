@@ -87,8 +87,9 @@ Emacs.ScrollBars: off
 Emacs.borderWidth: 0
 Emacs.internalBorder: 0
 
-Emacs.Font: Monospace-10
-Emacs.FontBackend: xft 
+!This is not compatible with Emacs below 22
+!Emacs.Font: Monospace-10
+!Emacs.FontBackend: xft 
 
 
 /* Normally, you should not have to edit anything below.  */
