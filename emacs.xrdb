@@ -1,5 +1,5 @@
 /* emacs.xrdb --- X resource file for Emacs         -*- xrdb -*-
-   Copyright (C) 2003, 2004  Daniel Brockman        vim:ft=xdefaults:
+   Copyright (C) 2003, 2004, 2010  Daniel Brockman        vim:ft=xdefaults:
 
    Author:   Daniel Brockman <daniel@brockman.se>
    URL:      http://www.deepwood.net/software/xrdb/emacs.xrdb
@@ -11,7 +11,7 @@
   
    This file is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
-   published by the Free Software Foundation; either version 2, or (at
+   published by the Free Software Foundation; either version 3, or (at
    your option) any later version.
   
    This file is distributed in the hope that it will be useful,
