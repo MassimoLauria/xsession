@@ -24,7 +24,7 @@
 
 NOOUTPUT=2>&1 > /dev/null
 
- 
+
 ## Restore sound settings
 echo -n "XSession Autostart... Sound "
 if [ -f /sbin/alsactl -a -f .asounf.conf ]; then
@@ -64,7 +64,7 @@ else
     echo "OFF"
 fi
 
-## OSD 
+## OSD
 echo -n "XSession Autostart... OSD daemon "
 if [ -f /usr/lib/notify-osd/notify-osd ]; then
     /usr/lib/notify-osd/notify-osd &
@@ -96,7 +96,7 @@ fi
 
 ## Wifi Manager
 echo -n "XSession Autostart... Wifi Monitor "
-if [ x$WIFI = "xyes" -a -f /usr/bin/nm-applet ]; then 
+if [ x$WIFI = "xyes" -a -f /usr/bin/nm-applet ]; then
     nm-applet --sm-disable &
     echo "ON"
 else
@@ -106,7 +106,7 @@ fi
 
 ## Power manager
 echo -n "XSession Autostart... Gnome Power manager "
-if [ x$LAPTOP = "xyes" -a -f /usr/bin/gnome-power-manager ]; then 
+if [ x$LAPTOP = "xyes" -a -f /usr/bin/gnome-power-manager ]; then
     gnome-power-manager &
     echo "ON"
 else
@@ -126,7 +126,7 @@ fi
 
 ## Music Daemon
 echo -n "XSession Autostart... Music Daemon "
-if [ x$MUSIC = "xyes" -a -f /usr/bin/mpd ]; then 
+if [ x$MUSIC = "xyes" -a -f /usr/bin/mpd ]; then
     mpd &
     if [ -f /usr/bin/sonata ]; then
         sonata &
@@ -138,16 +138,22 @@ fi
 
 ## Emacs Daemon
 echo -n "XSession Autostart... Emacs Daemon "
-if [ -f /usr/bin/emacs ]; then 
+if [ -f /usr/bin/emacs ]; then
     emacs --daemon &
-    echo "ON"
+    if [ -f /usr/bin/gconftool-2]; then
+        gconftool-2 -s /desktop/gnome/url-handlers/org-protocol/command '/usr/bin/emacsclient %s' --type String
+        gconftool-2 -s /desktop/gnome/url-handlers/org-protocol/enabled --type Boolean true
+        echo "ON (gconf org-protocol YES)"
+    else
+        echo "ON (gconf org-protocol NO)"
+    fi
 else
     echo "OFF"
 fi
 
 ## Sage Math Environment
 echo -n "XSession Autostart... SageMath Environment "
-if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then 
+if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then
     export SAGE_BROWSER=firefox
     sage -n lavori/notebook open_viewer=False &
     echo "ON"
@@ -157,7 +163,7 @@ fi
 
 ## SSH identity load
 echo -n "XSession Autostart... SSH Identity "
-if [ -n "$SSHIDENTITY" -a -f $SSHIDENTITY ]; then 
+if [ -n "$SSHIDENTITY" -a -f $SSHIDENTITY ]; then
     ssh-add $SSHIDENTITY
     echo "LOADED"
 else
@@ -166,7 +172,7 @@ fi
 
 ## Dropbox daemon
 echo -n "XSession Autostart... Dropbox Daemon "
-if [ x$DROPBOX = "xyes" -a -f /usr/bin/dropbox ]; then 
+if [ x$DROPBOX = "xyes" -a -f /usr/bin/dropbox ]; then
     dropbox start &
     echo "ON"
 else
