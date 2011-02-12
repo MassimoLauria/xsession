@@ -35,9 +35,15 @@ else
 fi
 
 
-## Load X composition
+## Load X composition (disabled on nVidia display adapters)
+##
+## On nVidia display adapters the xcompmgr produces an orrible tearing
+## in video playback and other accelerated features.
+NVIDIAP=`lspci|grep VGA|grep nVidia`
 echo -n "XSession Autostart... X Composition "
-if [ x$SPEED = "xfast" -a -f /usr/bin/xcompmgr ]; then
+if [ -n "$NVIDIAP" ]; then
+    echo "OFF (disabled on nVidia)"
+elif [ x$SPEED = "xfast" -a -f /usr/bin/xcompmgr ]; then
     xcompmgr -D1 -fcC 2> /dev/null &
     echo "ON"
 else
