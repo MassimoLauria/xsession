@@ -39,8 +39,8 @@ XDvi*editor: emacsclient --no-wait
 XDvi*font: FONT_BOLD
 XDvi*pause: True
 XDvi*safer: True
-XDvi*expertMode:	0
-XDvi*mouseMode:	0
+XDvi*expertMode: 0
+XDvi*mouseMode:	 0
 XDvi*gsAlpha:	True
 XDvi*postscript:	1
 XDvi*shrinkFactor:	4
@@ -67,7 +67,10 @@ XDvi.mainTranslations: #override\
                <Key>r:reread-dvi-file()\n\
        Ctrl<Btn1Down>:mouse-modes("source-special()")\n\
       Shift<Btn1Down>:mouse-modes("source-special()")\n\
-        Alt<Btn1Down>:mouse-modes("source-special()")\n
+        Alt<Btn1Down>:mouse-modes("source-special()")\n\
+           <Btn1Down>: mouse-modes("do-href()drag(+)")\n\
+           <Btn2Down>: mouse-modes("text-selection()")\n\
+           <Btn3Down>: mouse-modes("magnifier(*4)")\n
 
 
 !!-< Xmessage >----------
