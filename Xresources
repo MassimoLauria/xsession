@@ -11,7 +11,7 @@
 #include "urxvt.xrdb"
 #include "emacs.xrdb"
 #include "xscreensaver.xrdb"
-
+#include "xdvi.xrdb"
 
 /* Paste primary selection if not empty, otherwise the clipboard */
 *VT100.Translations: #override \

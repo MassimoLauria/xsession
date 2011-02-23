@@ -1,0 +1,70 @@
+/* XDVI Xresource file,                  -*- xrdb -*- */
+
+
+/* The next files must be loaded first */
+#include "font.xrdb"
+#include "zenburn.xrdb"
+
+
+XDvi*foreground: black
+XDvi*background: white
+XDvi*vport*foreground: COLOR_FG
+XDvi*vport*background: COLOR_BG
+XDvi*panel*foreground: COLOR_FG
+XDvi*panel*background: COLOR_BG
+XDvi*highlight:  blue
+XDvi*editor: emacsclient --no-wait
+XDvi*font: FONT_BOLD
+XDvi*pause: True
+XDvi*safer: True
+XDvi*expertMode: 0
+XDvi*mouseMode:	 0
+XDvi*gsAlpha:	True
+XDvi*postscript:	1
+XDvi*shrinkFactor:	4
+XDvi*useTeXPages:	True
+XDvi*keepPosition:	True
+XDvi.mainTranslations: #override\
+              <Key>F1:help()\n\
+          <Key>Return:down-or-next()\n\
+          <Key>Delete:up-or-previous()\n\
+       <Key>BackSpace:up-or-previous()\n\
+           Ctrl<Key>s:find()\n\
+            Alt<Key>k:down-or-next(0.02)\n\
+            Alt<Key>i:up-or-previous(0.02)\n\
+            Alt<Key>l:right(0.02)\n\
+            Alt<Key>j:left(0.02)\n\
+            Alt<Key>u:pagehistory-back()\n\
+            Alt<Key>o:pagehistory-forward()\n\
+               <Key>b:htex-back()\n\
+               <Key>f:fullscreen(toggle)\n\
+               <Key>k:down-or-next()\n\
+               <Key>i:up-or-previous()\n\
+               <Key>l:right()\n\
+               <Key>j:left()\n\
+               <Key>u:back-page()\n\
+               <Key>o:forward-page()\n\
+               <Key>g:home-or-top()\n\
+               <Key>h:end-or-bottom()\n\
+               <Key>s:change-density(-20)\n\
+               <Key>d:change-density(20)\n\
+               <Key>z:set-shrink-factor(4)set-density(100)\n\
+               <Key>+:set-shrink-factor(+)\n\
+               <Key>-:set-shrink-factor(-)\n\
+           <Key>comma:set-shrink-factor(-)\n\
+          <Key>period:set-shrink-factor(+)\n\
+               <Key>x:set-expert-mode()\n\
+               <Key>r:reread-dvi-file()\n\
+            <Key>Down:down-or-next(0.02)\n\
+              <Key>Up:up-or-previous(0.02)\n\
+            <Key>Left:left(0.02)\n\
+           <Key>Right:right(0.02)\n\
+            <Key>Next:down-or-next()\n\
+           <Key>Prior:up-or-previous()\n\
+       Ctrl<Btn1Down>:mouse-modes("source-special()")\n\
+      Shift<Btn1Down>:mouse-modes("source-special()")\n\
+        Alt<Btn1Down>:mouse-modes("source-special()")\n\
+           <Btn1Down>:mouse-modes("do-href()drag(+)")\n\
+           <Btn2Down>:mouse-modes("text-selection()")\n\
+           <Btn3Down>:mouse-modes("magnifier(*4)")\n
+
