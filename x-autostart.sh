@@ -7,6 +7,7 @@
 # User's environment
 [ -f ~/config/shell/shenv-common    ] && . ~/config/shell/shenv-common
 [ -f ~/config/shell/shenv-gnupg     ] && . ~/config/shell/shenv-gnupg
+[ -f ~/config/shell/shenv-ssh       ] && . ~/config/shell/shenv-ssh
 [ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
 
 #
