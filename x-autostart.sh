@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #
 # Massimo Lauria 2010-07-07
@@ -147,7 +147,7 @@ fi
 echo -n "XSession Autostart... Emacs Daemon "
 if [ -f /usr/bin/emacs ]; then
     emacs --daemon &
-    if [ -f /usr/bin/gconftool-2]; then
+    if [ -f /usr/bin/gconftool-2 ]; then
         gconftool-2 -s /desktop/gnome/url-handlers/org-protocol/command '/usr/bin/emacsclient %s' --type String
         gconftool-2 -s /desktop/gnome/url-handlers/org-protocol/enabled --type Boolean true
         echo "ON (gconf org-protocol YES)"
