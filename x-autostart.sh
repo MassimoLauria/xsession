@@ -185,3 +185,12 @@ if [ x$DROPBOX = "xyes" -a -f /usr/bin/dropbox ]; then
 else
     echo "OFF"
 fi
+
+## OfflineImap
+echo -n "XSession Autostart... Offline Imap "
+if [ ~/.offlineimaprc -a -f /usr/bin/offlineimap ]; then
+    offlineimap &
+    echo "ON"
+else
+    echo "OFF"
+fi
