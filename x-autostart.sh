@@ -165,7 +165,7 @@ fi
 ## Sage Math Environment
 echo -n "XSession Autostart... SageMath Environment "
 if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then
-    export SAGE_BROWSER=firefox
+    export SAGE_BROWSER=google-chrome
     sage -n lavori/notebook open_viewer=False &
     echo "ON"
 else

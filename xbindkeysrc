@@ -6,23 +6,23 @@
 # Date: 2010-05-10
 #
 # A list of keys is in /usr/include/X11/keysym.h and in
-# /usr/include/X11/keysymdef.h 
-# The XK_ is not needed. 
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
 #
-# List of modifier (on my keyboard): 
-#   Control, Shift, Mod1 (Alt), Mod2 (NumLock), 
-#   Mod3 (CapsLock), Mod4, Mod5 (Scroll). 
+# List of modifier (on my keyboard):
+#   Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
 #
-# Another way to specifie a key is to use 'xev' and set the 
-# keycode with c:nnn or the modifier with m:nnn where nnn is 
-# the keycode or the state returned by xev 
+# Another way to specifie a key is to use 'xev' and set the
+# keycode with c:nnn or the modifier with m:nnn where nnn is
+# the keycode or the state returned by xev
 #
-# This file is created by xbindkey_config 
-# The structure is : 
-# # Remark 
-# "command" 
-# m:xxx + c:xxx 
-# Shift+... 
+# This file is created by xbindkey_config
+# The structure is :
+# # Remark
+# "command"
+# m:xxx + c:xxx
+# Shift+...
 
 
 
@@ -47,7 +47,7 @@
 #Remark
 #"xterm"
 #    m:0x40 + c:28
-#    Mod4 + t 
+#    Mod4 + t
 
 
 ##
@@ -62,26 +62,33 @@
 #"gucharmap"
 #     Mod4 + u
 
-# Web browser
-"~/config/scripts/firefox-fixtheme.sh"
+
+#"~/config/scripts/firefox-fixtheme.sh" Firefox too slow in Ubuntu 11.10
+"google-chrome"
      Mod4 + w
 
-"~/config/scripts/firefox-fixtheme.sh"
+#"~/config/scripts/firefox-fixtheme.sh" Firefox too slow in Ubuntu 11.10
+#"google-chrome --app=http://mail.google.com"
+"xterm -e mutt"
      XF86Mail
+
+"google-chrome --app=http://localhost:8000"
+     XF86Calculator
 
 
 # File manager
 "pcmanfm"
-     Mod4 + f
+     XF86HomePage
 
 "pcmanfm"
-     XF86HomePage
+     Mod4 + f
+
 
 
 # Command chooser
 "exec `dmenu_path | dmenu -p 'Launch app:' -i -nf '#dcdcdc' -nb '#3f3f3f' -sb '#a6c292' -sf black -fn '*-terminus-r-*-16-140-*-m-*'`"
       Mod4 + c
-  
+
 
 # Terminal
 "xterm"
@@ -93,7 +100,7 @@
 
 ##
 ## Audio Controls
-## 
+##
 
 # Raise the Master Volume
 # m:000 c:174
