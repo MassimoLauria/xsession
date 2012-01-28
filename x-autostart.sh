@@ -89,14 +89,18 @@ else
     echo "OFF"
 fi
 
-## Ban mouse as soon as possible
-echo -n "XSession Autostart... Pulseaudio Applet "
-if [ -f /usr/bin/padevchooser ]; then
+## Control audio and volumes
+echo -n "XSession Autostart... Pulseaudio Applet"
+if [ -f /usr/bin/pasystray ]; then
+    pasystray &
+    echo "ON"
+elif [ -f /usr/bin/padevchooser ]; then
     padevchooser &
     echo "ON"
 else
     echo "OFF"
 fi
+
 
 
 ###### Conditional applications #########
