@@ -77,10 +77,10 @@
 
 
 # File manager
-"pcmanfm"
+"xdg-open ."
      XF86HomePage
 
-"pcmanfm"
+"xdg-open ."
      Mod4 + f
 
 
