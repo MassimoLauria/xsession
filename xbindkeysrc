@@ -63,16 +63,16 @@
 #     Mod4 + u
 
 
-#"~/config/scripts/firefox-fixtheme.sh" Firefox too slow in Ubuntu 11.10
-"google-chrome"
+# "~/config/scripts/firefox-fixtheme.sh" # Firefox too slow in Ubuntu 11.10
+"xdg-open http://"
      Mod4 + w
 
-#"~/config/scripts/firefox-fixtheme.sh" Firefox too slow in Ubuntu 11.10
 #"google-chrome --app=http://mail.google.com"
 "xterm -e mutt"
      XF86Mail
 
-"google-chrome --app=http://localhost:8000"
+#"google-chrome --app=http://localhost:8000"
+"xdg-open http://localhost:8000"
      XF86Calculator
 
 
