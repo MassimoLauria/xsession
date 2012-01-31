@@ -64,7 +64,7 @@
 
 
 # "~/config/scripts/firefox-fixtheme.sh" # Firefox too slow in Ubuntu 11.10
-"xdg-open http://"
+"xdg-open about:blank"
      Mod4 + w
 
 #"google-chrome --app=http://mail.google.com"
