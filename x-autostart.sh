@@ -94,6 +94,9 @@ echo -n "XSession Autostart... Audio Controls"
 if [ -f /usr/bin/gnome-volume-control-applet ]; then
     gnome-volume-control-applet &
     echo "ON"
+elif [ -f /usr/bin/gnome-sound-applet ]; then
+    gnome-sound-applet &
+    echo "ON"
 elif [ -f /usr/bin/pasystray ]; then
     pasystray &
     echo "ON"
