@@ -2,16 +2,16 @@
 
 
 /* The next files must be loaded first */
-#include "font.xrdb"
-#include "zenburn.xrdb"
+#include "config/xsession/font.xrdb"
+#include "config/xsession/zenburn.xrdb"
 
 
 /* Applications with dedicated file */
-#include "xterm.xrdb"
-#include "urxvt.xrdb"
-#include "emacs.xrdb"
-#include "xscreensaver.xrdb"
-#include "xdvi.xrdb"
+#include "config/xsession/xterm.xrdb"
+#include "config/xsession/urxvt.xrdb"
+#include "config/xsession/emacs.xrdb"
+#include "config/xsession/xscreensaver.xrdb"
+#include "config/xsession/xdvi.xrdb"
 
 /* Paste primary selection if not empty, otherwise the clipboard */
 *VT100.Translations: #override \

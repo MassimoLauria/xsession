@@ -6,8 +6,8 @@
 
 # User's environment
 [ -f ~/config/shell/shenv-common    ] && . ~/config/shell/shenv-common
-[ -f ~/config/shell/shenv-gnupg     ] && . ~/config/shell/shenv-gnupg
-[ -f ~/config/shell/shenv-ssh       ] && . ~/config/shell/shenv-ssh
+#[ -f ~/config/shell/shenv-gnupg     ] && . ~/config/shell/shenv-gnupg
+#[ -f ~/config/shell/shenv-ssh       ] && . ~/config/shell/shenv-ssh
 [ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
 
 #
@@ -64,8 +64,8 @@ fi
 
 ## Keyboard shortcuts
 echo -n "XSession Autostart... XBindkeys "
-if [ -f /usr/bin/xbindkeys ]; then
-    xbindkeys &
+if [ -f /usr/bin/xbindkeys -a -f "$HOME/.xbindkeysrc.noauto" ]; then
+    xbindkeys -f "$HOME/.xbindkeysrc.noauto" &
     echo "ON"
 else
     echo "OFF"
@@ -81,13 +81,13 @@ else
 fi
 
 ## Ban mouse as soon as possible
-echo -n "XSession Autostart... Ban Idle Mouse "
-if [ -f /usr/bin/unclutter ]; then
-    unclutter -noevents -idle 2 -root &
-    echo "ON"
-else
-    echo "OFF"
-fi
+# echo -n "XSession Autostart... Ban Idle Mouse "
+# if [ -f /usr/bin/unclutter ]; then
+#     unclutter -noevents -idle 2 -root &
+#     echo "ON"
+# else
+#     echo "OFF"
+# fi
 
 ## Control audio and volumes
 echo -n "XSession Autostart... Audio Controls"
@@ -172,7 +172,7 @@ fi
 ## Sage Math Environment
 echo -n "XSession Autostart... SageMath Environment "
 if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then
-    export SAGE_BROWSER=google-chrome
+    export SAGE_BROWSER=$BROWSER
     sage -n lavori/notebook open_viewer=False &
     echo "ON"
 else
@@ -199,7 +199,7 @@ fi
 
 ## OfflineImap
 echo -n "XSession Autostart... Offline Imap "
-if [ ~/.offlineimaprc -a -f /usr/bin/offlineimap ]; then
+if [ -f ~/.offlineimaprc -a -f /usr/bin/offlineimap ]; then
     offlineimap &
     echo "ON"
 else
