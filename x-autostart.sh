@@ -62,13 +62,13 @@ else
 fi
 
 
-## Keyboard shortcuts
+Keyboard shortcuts
 echo -n "XSession Autostart... XBindkeys "
 if [ -f /usr/bin/xbindkeys -a -f "$HOME/.xbindkeysrc.noauto" ]; then
-    xbindkeys -f "$HOME/.xbindkeysrc.noauto" &
-    echo "ON"
+   xbindkeys -f "$HOME/.xbindkeysrc.noauto" &
+   echo "ON"
 else
-    echo "OFF"
+   echo "OFF"
 fi
 
 ## OSD

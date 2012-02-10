@@ -3,7 +3,7 @@
 # Copyright (C) 2010, 2011, 2012 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2012-02-09, 12:31 (CET) Massimo Lauria"
+# Time-stamp: "2012-02-10, 16:06 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -76,9 +76,9 @@ echo ""
 
 # Do backups
 echo -n "Backing up old config files..."
-backup_maybe $HOME/.xsessionrc
 backup_maybe $HOME/.xsession
 backup_maybe $HOME/.xbindkeysrc
+backup_maybe $HOME/.xbindkeysrc.noauto
 backup_maybe $HOME/.Xresources
 backup_maybe $HOME/.Xmodmap
 echo "OK."
@@ -88,11 +88,11 @@ echo -n "Installing new config files.."
 $RM -f $HOME/.xsessionrc
 $RM -f $HOME/.xsession
 $RM -f $HOME/.xbindkeysrc
+$RM -f $HOME/.xbindkeysrc.noauto
 $RM -f $HOME/.Xresources
 $RM -f $HOME/.Xmodmap
-$LN -s $PWD/xsession  $HOME/.xsession
-$LN -s $PWD/xsessionrc  $HOME/.xsessionrc
-$LN -s $PWD/xbindkeysrc $HOME/.xbindkeysrc
+$LN -s $PWD/xsession    $HOME/.xsession
+$LN -s $PWD/xbindkeysrc $HOME/.xbindkeysrc.noauto
 $LN -s $PWD/Xresources  $HOME/.Xresources
 $LN -s $PWD/Xmodmap     $HOME/.Xmodmap
 echo "OK"

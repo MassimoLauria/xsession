@@ -1,36 +1,57 @@
 #!/bin/sh
 # Massimo Xsession Script
-#
-# startlxde:
-#    Lightweight X Desktop Manager, it is a lightweight
-#    desktop manager. It is  quite usable and gnome-like,
-#    but it sucks less resources. It starts with openbox as
-#    window manager and PCmanFM as filemanager
-#
-#
-# awesome:
-#    it is a tile window manager, an option that in going to consider
-#    much more in the future (i just need to solve some issues with
-#    some application)
-#
-# xmonad:
-#   another tile-window manager. Written in haskell and (sigh!) configurable
-#   only in Haskell source code
-#
-#
-#
+
+
+
+# Setup window manager
+WM=awesome
+
 
 # Load User's environment
 [ -f ~/config/shell/shenv-common    ] && . ~/config/shell/shenv-common
 [ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
 
+if [ -z "$CONFIGDIR" ]; then
+    CONFIGDIR=$HOME/config
+fi
+
+
 # Files
-XAUTOSTART=~/config/xsession/x-autostart.sh
- XAUTOSTOP=~/config/xsession/x-autostop.sh
+XMODMAP=$HOME/.Xmodmap
+XRESOURCES=$HOME/.Xresources
+XAUTOSTART=$CONFIGDIR/xsession/x-autostart.sh
+ XAUTOSTOP=$CONFIGDIR/xsession/x-autostop.sh
+AUTOSTARTLOG=.x-autostart.log
 
 
-exec awesome
+# Umask settings
+umask 0077
+
+# Xorg settings
+xsetroot -solid black
+[ -d ~/config/fonts ] && xset +fp ~/config/fonts
+xset fp rehash
+xset b off
+xset dpms 300 300 300
+
+[ -f $XMODMAP ] && xmodmap $XMODMAP
+[ -f $XRESOURCES ] && xrdb $XRESOURCES
 
 
-#-- Fallback Xterm --
-#exec xterm
+# Various env variables to improve experience.
+export SDL_MOUSE_RELATIVE=0
+
+# Make java behave with AwesomeWM
+if [ x$WM = "xawesome" ]; then
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi
+
+
+# Start session
+
+$XAUTOSTART &  # preload programs
+
+$WM            # launch wm
+
+$XAUTOSTOP     # clean up
+
