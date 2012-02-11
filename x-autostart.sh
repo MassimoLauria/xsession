@@ -90,22 +90,22 @@ fi
 # fi
 
 ## Control audio and volumes
-echo -n "XSession Autostart... Audio Controls"
-if [ -f /usr/bin/gnome-volume-control-applet ]; then
-    gnome-volume-control-applet &
-    echo "ON"
-elif [ -f /usr/bin/gnome-sound-applet ]; then
-    gnome-sound-applet &
-    echo "ON"
-elif [ -f /usr/bin/pasystray ]; then
-    pasystray &
-    echo "ON"
-elif [ -f /usr/bin/padevchooser ]; then
-    padevchooser &
-    echo "ON"
-else
-    echo "OFF"
-fi
+# echo -n "XSession Autostart... Audio Controls"
+# if [ -f /usr/bin/gnome-volume-control-applet ]; then
+#     gnome-volume-control-applet &
+#     echo "ON"
+# elif [ -f /usr/bin/gnome-sound-applet ]; then
+#     gnome-sound-applet &
+#     echo "ON"
+# elif [ -f /usr/bin/pasystray ]; then
+#     pasystray &
+#     echo "ON"
+# elif [ -f /usr/bin/padevchooser ]; then
+#     padevchooser &
+#     echo "ON"
+# else
+#     echo "OFF"
+# fi
 
 
 
