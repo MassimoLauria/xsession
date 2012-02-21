@@ -32,7 +32,15 @@ xsetroot -solid black
 [ -d ~/config/fonts ] && xset +fp ~/config/fonts
 xset fp rehash
 xset b off
-xset dpms 300 300 300
+
+# This is annoying watching TV
+if [ x$AGGRESSIVE_SCREENSAVER = "xyes" ];then
+    xset dpms 300 300 300
+else
+    xset -dpms
+fi
+
+
 
 [ -f $XMODMAP ] && xmodmap $XMODMAP
 [ -f $XRESOURCES ] && xrdb $XRESOURCES

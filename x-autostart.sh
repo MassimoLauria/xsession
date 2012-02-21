@@ -132,7 +132,7 @@ else
 fi
 
 
-## Webcan Monitor
+## Webcam Monitor
 echo -n "XSession Autostart... Webcam Monitor "
 if [ x$WEBCAM = "xyes" -a -f /usr/bin/cameramonitor ]; then
     cameramonitor &
