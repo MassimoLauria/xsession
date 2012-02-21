@@ -107,18 +107,26 @@
 # m:000 c:174
 "~/config/scripts/vol.sh up"
     XF86AudioRaiseVolume
-
+"~/config/scripts/vol.sh up"
+    Mod4 + KP_Right
 
 
 # Lower the Master Volume
 # m:000 c:176
 "~/config/scripts/vol.sh down"
     XF86AudioLowerVolume
+"~/config/scripts/vol.sh down"
+    Mod4 + KP_Left
+
 
 # Mute/Unmute
 # m:000 c:160
 "~/config/scripts/vol.sh mute"
     XF86AudioMute
+"~/config/scripts/vol.sh mute"
+    Mod4 + KP_Begin
+
+
 
 # Mute/Unmute Monitor Speaker (yes, it's is ugly...)
 # m:040 c:160
