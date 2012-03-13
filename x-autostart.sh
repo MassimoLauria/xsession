@@ -179,15 +179,6 @@ else
     echo "OFF"
 fi
 
-## SSH identity load
-echo -n "XSession Autostart... SSH Identity "
-if [ -n "$SSHIDENTITY" -a -f $SSHIDENTITY ]; then
-    ssh-add $SSHIDENTITY
-    echo "LOADED"
-else
-    echo "NOT LOADED"
-fi
-
 ## Dropbox daemon
 echo -n "XSession Autostart... Dropbox Daemon "
 if [ x$DROPBOX = "xyes" -a -f /usr/bin/dropbox ]; then
