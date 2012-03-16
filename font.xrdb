@@ -1,8 +1,10 @@
-/* Xresource file, default font definition  -*- xrdb -*- 
+/* Xresource file, default font definition  -*- xrdb -*-
 
 Massimo Lauria, 2010-05-10.
 
 */
 
+#define FONTALIAS           "Monospace-10"
 #define FONT -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
 #define FONT_BOLD -misc-fixed-bold-r-normal--15-140-75-75-c-90-iso10646-1
+

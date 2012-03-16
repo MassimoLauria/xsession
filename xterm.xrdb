@@ -1,5 +1,5 @@
 /* xterm.xrdb --- X resource file for XTerm         -*- xrdb -*-
-   Copyright (C) 2003, 2004  Daniel Brockman        vim:ft=xdefaults:
+   Copyright (C) 2003, 2004, 2012  Daniel Brockman        vim:ft=xdefaults:
 
    Author:   Daniel Brockman <drlion@deepwood.net>
    URL:      http://www.deepwood.net/software/xrdb/xterm.xrdb
@@ -8,17 +8,17 @@
    Modified by Massimo Lauria, 2010-05-10.
 
    This file is released under the GNU General Public License.
-  
+
    This file is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License as
-   published by the Free Software Foundation; either version 2, or (at
+   published by the Free Software Foundation; either version 3, or (at
    your option) any later version.
-  
+
    This file is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
    General Public License for more details.
-  
+
    To receive a copy of the GNU General Public License, go to
    <http://www.gnu.org/licenses/#GPL> or write to the Free Software
    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
@@ -85,14 +85,18 @@ XTerm*scrollBar:               false
 XTerm*visualBell:              false
 
 XTerm*geometry: 80x40
-XTerm*metaSendsEscape: true 
+XTerm*metaSendsEscape: true
 
 ! This is necessary for colorful terminal/emacs
-XTerm*termName: xterm-256color 
+XTerm*termName: xterm-256color
 
 
 
 /* Normally, you should not have to edit anything below.  */
+
+#ifdef FONTALIAS
+XTerm*faceName:                "Monospace-10"
+#else
 
 #ifdef FONT
 XTerm*font:                    FONT
@@ -100,6 +104,8 @@ XTerm*font:                    FONT
 #ifdef FONT_BOLD
 XTerm*boldFont:                FONT_BOLD
 #endif
+
+#endif /* FONTALIAS */
 
 #if defined(COLOR_FG) && defined(COLOR_BG)
 XTerm*background:              COLOR_BG
