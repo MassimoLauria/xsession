@@ -16,7 +16,15 @@ if [ -e "/dev/input/by-id/$MEK4000_ID" ]; then
     which "evrouter" 2>/dev/null >/dev/null || \
         echo "Error: missing required program \"evrouter\" (needed for MEK4000)."
 
-    sudo -n $(dirname $0)/run-evrouter.sh "$MEK4000_ID" "$(dirname $0)/$MEK4000_CONF"
+
+    # Kill previous running instance
+    sudo -n `which evrouter` -q "/dev/input/by-id/$MEK4000_ID"
+
+    # Remove stale temp files
+    sudo -n rm -f "/tmp/.evrouter$DISPLAY"
+
+    # Run a new instance
+    sudo -n `which evrouter` -c  "$(dirname $0)/$MEK4000_CONF" "/dev/input/by-id/$MEK4000_ID"
 
 fi
 

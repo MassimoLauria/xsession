@@ -1,0 +1,4 @@
+
+# Launch evrouter
+%admin   ALL=(root) NOPASSWD: /usr/bin/evrouter*
+%admin	 ALL=(root) NOPASSWD: /bin/rm -f /tmp/*evrouter*
