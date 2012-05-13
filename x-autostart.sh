@@ -80,6 +80,11 @@ else
     echo "OFF"
 fi
 
+## Accentee vowels on english keyboard
+echo -n "XSession Autostart... accented vowels setup"
+$(dirname $0)/tweak-for-eng-kbd.sh
+
+
 ## Ban mouse as soon as possible
 # echo -n "XSession Autostart... Ban Idle Mouse "
 # if [ -f /usr/bin/unclutter ]; then
