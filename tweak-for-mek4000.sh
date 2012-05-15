@@ -5,7 +5,7 @@
 #
 # Microsoft Ergonomic Keyboard 4000 fixes for Linux.
 #
-MEK4000_ID="usb-Microsoft_Natural®_Ergonomic_Keyboard_4000-event-kbd"
+MEK4000_ID="usb-Microsoft_Natural®_Ergonomic_Keyboard_4000-if01-event-kbd"
 MEK4000_CONF="evrouter-mek4000.conf"
 MEK4000_KEYCODE="0xfa"
 
