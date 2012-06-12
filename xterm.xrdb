@@ -95,7 +95,7 @@ XTerm*termName: xterm-256color
 /* Normally, you should not have to edit anything below.  */
 
 #ifdef FONTALIAS
-XTerm*faceName:                "Monospace-10"
+XTerm*faceName:                FONTALIAS
 #else
 
 #ifdef FONT
