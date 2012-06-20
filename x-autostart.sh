@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# Massimo Lauria 2010-07-07
+# Massimo Lauria 2012-06-16
 
 
 # User's environment
@@ -17,7 +17,6 @@
 # WEBCAM=yes/no
 # MUSIC=yes/no
 # SAGEMATH=yes/no
-# SSHIDENTITY=filename
 # DROPBOX=yes/no
 # WALLPAPER=filename
 # LAPTOP=yes/no
@@ -62,7 +61,7 @@ else
 fi
 
 
-Keyboard shortcuts
+## Keyboard shortcuts
 echo -n "XSession Autostart... XBindkeys "
 if [ -f /usr/bin/xbindkeys -a -f "$HOME/.xbindkeysrc.noauto" ]; then
    xbindkeys -f "$HOME/.xbindkeysrc.noauto" &
