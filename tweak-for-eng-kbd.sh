@@ -8,7 +8,7 @@ LAYOUT=`setxkbmap -print | grep xkb_symbols | sed 's|.*["+]\([^+"][^+"]\)["+].*|
 
 DOIT="nay"
 
-case $TERM in
+case $LAYOUT in
     it) # No need here
         DOIT="nay"
         ;;

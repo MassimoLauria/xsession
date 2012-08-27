@@ -41,7 +41,7 @@ else
 fi
 
 
-
+test -z $PREFERREDKBD || setxkbmap $PREFERREDKBD
 [ -f $XMODMAP ] && xmodmap $XMODMAP
 [ -f $XRESOURCES ] && xrdb $XRESOURCES
 

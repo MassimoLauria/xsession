@@ -56,6 +56,9 @@ echo -n "XSession Autostart... X Screensaver "
 if [ -f /usr/bin/xscreensaver ]; then
     xscreensaver -no-splash &
     echo "ON"
+elif [ -f /usr/bin/gnome-screensaver ]; then
+    gnome-screensaver &
+    echo "ON"
 else
     echo "OFF"
 fi
