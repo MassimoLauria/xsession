@@ -96,7 +96,7 @@
      Mod4 + Return
 
 # Screen Lock
-"xscreensaver-command -lock; xset dpms force off"
+"(xscreensaver-command -lock || gnome-screensaver-command --lock) ; xset dpms force off"
      Mod4 + Pause
 
 ##
