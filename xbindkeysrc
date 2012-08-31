@@ -65,20 +65,20 @@
 
 # "xdg-open about:blank"
 #"~/config/scripts/firefox-fixtheme.sh" # Firefox too slow in Ubuntu 11.10
-"firefox -new-tab"
+"$BROWSER"
      Mod4 + w
 
-#"google-chrome --app=http://mail.google.com"
-"xterm -e mutt"
+#"xterm -e mutt"
+"google-chrome --app=http://mail.google.com"
      XF86Mail
 
 #"google-chrome --app=http://localhost:8000"
-"firefox -new-tab http://localhost:8000"
+"$BROWSER www.wolframalpha.com"
      XF86Calculator
 
 
 # File manager
-"firefox"
+"$BROWSER"
      XF86HomePage
 
 "pcmanfm"
