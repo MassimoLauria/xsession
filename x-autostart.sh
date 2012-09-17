@@ -6,9 +6,12 @@
 
 # User's environment
 [ -f ~/config/shell/shenv-common    ] && . ~/config/shell/shenv-common
-#[ -f ~/config/shell/shenv-gnupg     ] && . ~/config/shell/shenv-gnupg
-#[ -f ~/config/shell/shenv-ssh       ] && . ~/config/shell/shenv-ssh
 [ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
+
+if [ -z "$CONFIGDIR" ]; then
+    CONFIGDIR=$HOME/config
+fi
+
 
 #
 # available options are (among others)
@@ -164,38 +167,12 @@ else
     echo "OFF"
 fi
 
-## Emacs Daemon
-echo -n "XSession Autostart... Emacs Daemon "
-if [ -f /usr/bin/emacs ]; then
-    emacs --daemon &
-    if [ -f /usr/bin/gconftool-2 ]; then
-        gconftool-2 -s /desktop/gnome/url-handlers/org-protocol/command '/usr/bin/emacsclient %s' --type String
-        gconftool-2 -s /desktop/gnome/url-handlers/org-protocol/enabled --type Boolean true
-        echo "ON (gconf org-protocol YES)"
-    else
-        echo "ON (gconf org-protocol NO)"
-    fi
-else
-    echo "OFF"
-fi
 
 ## Sage Math Environment
 echo -n "XSession Autostart... SageMath Environment "
 if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then
     export SAGE_BROWSER=$BROWSER
     sage -n lavori/notebook open_viewer=False &
-    echo "ON"
-else
-    echo "OFF"
-fi
-
-## Dropbox daemon
-echo -n "XSession Autostart... Dropbox Daemon "
-if [ x$DROPBOX = "xyes" -a -f /usr/bin/dropbox ]; then
-    dropbox start &
-    echo "ON"
-elif [ x$DROPBOX = "xyes" -a -f $HOME/.dropbox-dist/dropboxd ]
-    start-stop-daemon -b -o -c $USER -S -x $HOME/.dropbox-dist/dropboxd
     echo "ON"
 else
     echo "OFF"
@@ -209,3 +186,7 @@ if [ -f ~/.offlineimaprc -a -f /usr/bin/offlineimap ]; then
 else
     echo "OFF"
 fi
+
+
+## Launch startup scripts
+run-parts $CONFIGDIR/xsession/autostart.d/
