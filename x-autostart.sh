@@ -168,16 +168,6 @@ else
 fi
 
 
-## Sage Math Environment
-echo -n "XSession Autostart... SageMath Environment "
-if [ x$SAGEMATH = "xyes" -a -f `which sage` ]; then
-    export SAGE_BROWSER=$BROWSER
-    sage -n lavori/notebook open_viewer=False &
-    echo "ON"
-else
-    echo "OFF"
-fi
-
 ## OfflineImap
 echo -n "XSession Autostart... Offline Imap "
 if [ -f ~/.offlineimaprc -a -f /usr/bin/offlineimap ]; then
