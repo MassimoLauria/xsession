@@ -90,6 +90,10 @@
 "exec `dmenu_path | dmenu -p 'Launch app:' -i -nf '#dcdcdc' -nb '#3f3f3f' -sb '#a6c292' -sf black -fn '*-terminus-r-*-16-140-*-m-*'`"
       Mod4 + c
 
+# Document search 
+"~/config/desktop/recoll-search.sh"
+      Mod4 + g
+
 
 # Terminal
 "xterm"
