@@ -138,17 +138,25 @@
     Mod4 + XF86AudioMute
 
 
-# (MPD) Previous Song
-"mpc prev"
-    XF86AudioPrev
-
-# (MPD) Next Song
-"mpc next"
-    XF86AudioNext
-
-# (MPD) Play/Pause
-"mpc toggle"
+# # (MPD) Previous Song
+# "mpc prev"
+#     XF86AudioPrev
+# # (MPD) Next Song
+# "mpc next"
+#     XF86AudioNext
+# # (MPD) Play/Pause
+# "mpc toggle"
+#     XF86AudioPlay
+# Previous Song
+"rhythmbox-client --previous"
+    XF86Launch5
+# Next Song
+"rhythmbox-client --next"
+    XF86Launch9
+# Play/Pause
+"rhythmbox-client --play-pause"
     XF86AudioPlay
+
 
 # True fullscreen
 #"wmctrl -r :ACTIVE: -b toggle,fullscreen"
