@@ -168,15 +168,6 @@ else
 fi
 
 
-## OfflineImap
-echo -n "XSession Autostart... Offline Imap "
-if [ -f ~/.offlineimaprc -a -f /usr/bin/offlineimap ]; then
-    offlineimap &
-    echo "ON"
-else
-    echo "OFF"
-fi
-
 
 ## Launch startup scripts
 run-parts $CONFIGDIR/xsession/autostart.d/

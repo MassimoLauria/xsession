@@ -1,0 +1,12 @@
+#!/bin/sh
+
+## Keyring
+echo -n "XSession Autostart... keyring process (secrets,pkcs11) "
+if [ -f /usr/bin/gnome-keyring-daemon ]; then
+    /usr/bin/gnome-keyring-daemon --start --components=secrets,pkcs11 >/dev/null
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+

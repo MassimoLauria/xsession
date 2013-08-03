@@ -1,0 +1,11 @@
+#!/bin/sh
+
+## OfflineImap
+echo -n "XSession Autostart... Offline Imap "
+if [ -f ~/.offlineimaprc -a -f /usr/bin/offlineimap ]; then
+    offlineimap &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
