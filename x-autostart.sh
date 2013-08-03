@@ -125,16 +125,6 @@ $(dirname $0)/tweak-for-mek4000.sh 2>/dev/null >/dev/null
 
 ###### Conditional applications #########
 
-## Wifi Manager
-echo -n "XSession Autostart... Wifi Monitor "
-if [ x$WIFI = "xyes" -a -f /usr/bin/nm-applet ]; then
-    nm-applet --sm-disable &
-    echo "ON"
-else
-    echo "OFF"
-fi
-
-
 ## Power manager
 echo -n "XSession Autostart... Gnome Power manager "
 if [ x$LAPTOP = "xyes" -a -f /usr/bin/gnome-power-manager ]; then
