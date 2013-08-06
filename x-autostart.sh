@@ -20,7 +20,7 @@ fi
 # WEBCAM=yes/no
 # MUSIC=yes/no
 # SAGEMATH=yes/no
-# DROPBOX=yes/no
+# CLOUDSTORAGE=yes/no
 # WALLPAPER=filename
 # LAPTOP=yes/no
 # SPEED=fast/slow
