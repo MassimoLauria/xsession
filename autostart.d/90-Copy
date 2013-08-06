@@ -1,0 +1,17 @@
+#!/bin/sh
+
+## Copy daemon
+
+echo -n "XSession Autostart... Copy (online storage)  Daemon "
+
+CLIENT=$HOME/.copy-dist/`uname -i`/CopyAgent
+
+if [ x$CLOUDSTORAGE = "xyes" -a -f $CLIENT ]; then
+    $CLIENT &
+
+    echo "ON"
+
+else
+    echo "OFF"
+fi
+
