@@ -1,0 +1,15 @@
+#!/bin/sh
+
+HOSTXSESSION=~/personal/conf/xsession-$(hostname -s)
+
+echo -n "XSession Autostart... host dependent scripts "
+if [ -f $HOSTXSESSION ]; then
+    $HOSTXSESSION &
+    echo "ON"
+else
+    echo "OFF"
+fi
+
+
+
+
