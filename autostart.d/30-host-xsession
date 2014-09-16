@@ -4,7 +4,7 @@ HOSTXSESSION=~/personal/conf/xsession-$(hostname -s)
 
 echo -n "XSession Autostart... host dependent scripts "
 if [ -f $HOSTXSESSION ]; then
-    $HOSTXSESSION &
+    . $HOSTXSESSION &
     echo "ON"
 else
     echo "OFF"
