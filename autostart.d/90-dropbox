@@ -4,12 +4,12 @@
 
 echo -n "XSession Autostart... Dropbox Daemon "
 
-if [ x$CLOUDSTORAGE = "xyes" -a -f /usr/bin/dropbox ]; then
+if [ -f /usr/bin/dropbox ]; then
 
     dropbox start &
     echo "ON"
 
-elif [ x$CLOUDSTORAGE = "xyes" -a -f $HOME/.dropbox-dist/dropboxd ]; then
+elif [ -f $HOME/.dropbox-dist/dropboxd ]; then
     start-stop-daemon -b -o -c $USER -S -x $HOME/.dropbox-dist/dropboxd
 
     echo "ON"
