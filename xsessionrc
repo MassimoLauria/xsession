@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# keyboard
+/usr/bin/xmodmap /home/massimo/.Xmodmap
+
+# screen 
+xset dpms 600
+xautolock -time 10 -locker i3lock
+feh --bg-scale ~/.config/wallpaper.jpg 
+
+# apps
+dropbox start -i
+emacs --daemon
