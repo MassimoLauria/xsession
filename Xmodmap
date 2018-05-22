@@ -13,8 +13,16 @@ remove Control = Control_L
 add Control = Caps_Lock
 add Control = Control_L
 
-!! AltGR on Alt_L and Compose on Win_R/Super_R
+
+!! Temporary settings for my weird Apple keyboard
+!! at work
+!! 1. Switch Super_L and Alt_L 
+!! 2. AltGR on Alt_R and Compose on Win_R/Super_R
 !!
+keycode 64 = Super_L
+keycode 133 = Alt_L
+!! add Mod1 = Alt_L
+!! add Mod4 = Super_L
 keycode 134 = Mode_switch
 ! activate compose key
 ! keycode 135 = Multi_key   
