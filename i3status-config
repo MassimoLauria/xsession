@@ -1,3 +1,4 @@
+# -*- mode: sh[conf] -*-
 # i3status configuration file.
 # see "man i3status" for documentation.
 
@@ -19,12 +20,12 @@ order += "tztime local"
 order += "volume master"
 
 ethernet _first_ {
-        format_up = "E: %ip"
-        format_down = "E: down"
+        format_up = "🖧 %ip"
+        format_down = "🖧 off"
 }
 
 tztime local {
-        format = "%d %^b %Y  %H:%M"
+        format = "📅 %d %^b %Y 🕚 %H:%M"
 }
 
 tztime week {
@@ -36,8 +37,11 @@ cpu_usage {
     }
 
 disk "/" {
-        format = "HD %avail / %total"
+        format = "Free %avail"
 }
 
 volume master {
+    format = "🔊 %volume"
+    format_muted = "🔇 %volume"
+        
 }
