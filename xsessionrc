@@ -7,10 +7,12 @@
 xset dpms 600
 xautolock -time 10 -locker "i3lock -i ~/.config/lock-wallpaper.png" &
 feh --bg-scale ~/.config/wallpaper.jpg 
+unclutter -root -idle 5 &
 
 # apps
 dropbox start -i 
 emacs --daemon &
+recollindex -m -w 10
 
 # keyring
 gnome-keyring-daemon --start --components=secrets,pkcs11 >/dev/null
