@@ -5,9 +5,14 @@
 
 # screen 
 xset dpms 600
-xautolock -time 10 -locker i3lock
+xautolock -time 10 -locker "i3lock -i ~/.config/lock-wallpaper.png" &
 feh --bg-scale ~/.config/wallpaper.jpg 
 
 # apps
-dropbox start -i
-emacs --daemon
+dropbox start -i 
+emacs --daemon &
+
+# keyring
+gnome-keyring-daemon --start --components=secrets,pkcs11 >/dev/null
+
+
