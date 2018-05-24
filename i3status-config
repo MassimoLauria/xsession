@@ -29,7 +29,9 @@ tztime local {
 }
 
 tztime week {
-        format = "%A W%W"
+        format    = "%A W%W"
+        min_width = "mercoledì WXX"
+        align = right
 }
 
 cpu_usage {
@@ -43,5 +45,5 @@ disk "/" {
 volume master {
     format = "🔊 %volume"
     format_muted = "🔇 %volume"
-        
+    min_width = "🔊 000%"
 }
