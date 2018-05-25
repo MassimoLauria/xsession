@@ -123,7 +123,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-bindsym Ctrl+Mod4+Delete mode "$mode_system"
+bindsym Ctrl+Mod1+Delete mode "$mode_system"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
