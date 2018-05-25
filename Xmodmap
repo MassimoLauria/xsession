@@ -14,19 +14,10 @@ add Control = Caps_Lock
 add Control = Control_L
 
 
-!! Temporary settings for my weird Apple keyboard
-!! at work
-!! 1. Switch Super_L and Alt_L 
-!! 2. AltGR on Alt_R and Compose on Win_R/Super_R
-!!
-keycode 64 = Super_L
-keycode 133 = Alt_L
-!! add Mod1 = Alt_L
-!! add Mod4 = Super_L
-keycode 134 = Mode_switch
-! activate compose key
-! keycode 135 = Multi_key   
-keycode 108 = Multi_key
+!! AltGR on Alt_R 
+keycode 108 = Mode_switch
+!! Compose on Win_R/Super_R
+keycode 134 = Multi_key   
 
 
 !! Accented letters
