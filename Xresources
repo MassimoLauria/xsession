@@ -1,84 +1,21 @@
-/* Xresource file,                  -*- xrdb -*- */
+! Emacs Settings */
+Emacs.ToolBar: 0
+Emacs.MenuBar: off
+Emacs.ScrollBars: off
+Emacs.borderWidth: 0
+Emacs.internalBorder: 0
+Emacs.Font: DejaVu Sans Mono-14
+
+! Zenburn colors
+#define EMACS_FG                  #dcdccc
+#define EMACS_BG                  #3f3f3f
+
+Emacs.foreground: EMACS_FG
+Emacs.background: EMACS_BG
 
 
-/* The next files must be loaded first */
-#include "config/xsession/font.xrdb"
-#include "config/xsession/zenburn.xrdb"
-
-
-/* Applications with dedicated file */
-#include "config/xsession/xterm.xrdb"
-#include "config/xsession/urxvt.xrdb"
-#include "config/xsession/emacs.xrdb"
-#include "config/xsession/xscreensaver.xrdb"
-#include "config/xsession/xdvi.xrdb"
-
-/* Paste primary selection if not empty, otherwise the clipboard */
 *VT100.Translations: #override \
             <Btn2Up>:                insert-selection(PRIMARY,CLIPBOARD) \n\
             <Btn2Down>:              ignore()
 
-
-!! Xft Font configuration
-Xft*dpi:       108
-Xft*antialias: true
-Xft*hinting:   true
-Xft*hintstyle: hintslight
-Xft*rgba:      rgb
-
-
-
-!!-< Xmessage >----------
-xmessage*buttons:                       Close:0
-xmessage*foreground:                    COLOR_FG
-xmessage*background:                    gray15
-xmessage*message*background:            COLOR_BG
-xmessage*minWidth:  640
-xmessage*minHeight: 480
-xmessage*center:                        true
-
-xmessage*Text.borderColor:              gray15
-xmessage*Text*background:               COLOR_FG
-
-xmessage*Scrollbar.width:               10
-xmessage*Scrollbar.borderWidth:         0
-xmessage*Scrollbar.bordercolor:         COLOR_FG
-xmessage*Scrollbar.foreground:          COLOR_FG
-xmessage*Scrollbar.background:          COLOR_BG
-
-xmessage*Command.highlightThickness:    0
-xmessage*Command.internalWidth:         10
-xmessage*Command.internalHeight:        5
-xmessage*Command.borderColor:           gray40
-xmessage*Command.shapeStyle:            Rectangle
-xmessage*Command.background:            COLOR_BG
-xmessage*font:	                        FONT
-
-
-!!-< Xfontsel >---------------------------------
-XFontSel*font: FONT
-XFontSel*menu*showUnselectable:       false
-XFontSel*sampleText.background:       COLOR_BG
-XFontSel*MenuButton.shadowWidth:          0
-XFontsel*Toggle*ToggleStyle:          check
-XFontsel*MenuButton*Justify:           left
-XFontsel*MenuButton*MenuButtonStyle: select
-xfontsel*fontName.foreground: COLOR_FG
-xfontsel*fontName.background: gray15
-xfontsel.pane.commandBox.quitButton.background: COLOR_BG
-xfontsel.pane.commandBox.quitButton.foreground: COLOR_FG
-xfontsel.pane.commandBox.ownButton.background:  COLOR_BG
-xfontsel.pane.commandBox.ownButton.foreground:  COLOR_FG
-xfontsel.pane.commandBox.countLabel.foreground: COLOR_FG
-xfontsel.pane.commandBox.countLabel.background: COLOR_BG
-xfontsel.pane.commandBox.background: gray15
-xfontsel.pane.viewPort.sampleText.background:   COLOR_BG
-xfontsel.pane.viewPort.sampleText.foreground:   COLOR_FG
-xfontsel.pane.fieldBox.MenuButton.borderWidth:   1
-xfontsel.pane.fieldBox.MenuButton.internalHeight:5
-xfontsel.pane.fieldBox.MenuButton.internalWidth: 5
-xfontsel.pane.fieldBox.MenuButton.shapeStyle:    rectangle
-xfontsel.pane.fieldBox*background:  COLOR_BG
-xfontsel.pane.fieldBox*foreground:  COLOR_FG
-!!}}}
 

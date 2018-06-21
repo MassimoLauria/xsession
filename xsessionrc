@@ -1,12 +1,19 @@
 #!/bin/sh
 
-# keyboard
-/usr/bin/xmodmap /home/massimo/.Xmodmap
-
+# X config files
+if [ -f $HOME/.Xmodmap ];then
+    /usr/bin/xmodmap $HOME/.Xmodmap
+fi
+if [ -f $HOME/.Xresources ];then
+    /usr/bin/xrdb -merge $HOME/.Xresources
+fi
+    
 # screen 
 xset dpms 600
 xautolock -time 10 -locker "i3lock -i ~/.config/lock-wallpaper.png" &
-feh --bg-scale ~/.config/wallpaper.jpg 
+if [ -f $HOME/.config/wallpaper.jpg  ];then
+    feh --bg-scale $HOME/.config/wallpaper.jpg 
+fi
 unclutter -root -idle 5 &
 
 # apps
