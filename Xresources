@@ -4,14 +4,6 @@ Emacs.MenuBar: off
 Emacs.ScrollBars: off
 Emacs.borderWidth: 0
 Emacs.internalBorder: 0
-Emacs.Font: DejaVu Sans Mono-14
-
-! Zenburn colors
-#define EMACS_FG                  #dcdccc
-#define EMACS_BG                  #3f3f3f
-
-Emacs.foreground: EMACS_FG
-Emacs.background: EMACS_BG
 
 
 *VT100.Translations: #override \
