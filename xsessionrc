@@ -18,6 +18,7 @@ unclutter -root -idle 5 &
 
 # apps
 dropbox start -i 
+odrive &
 emacs --daemon &
 recollindex -m -w 10
 
