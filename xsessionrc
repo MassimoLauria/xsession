@@ -17,7 +17,7 @@ fi
 unclutter -root -idle 5 &
 
 # apps
-dropbox start -i 
+run_keybase -a
 odrive &
 emacs --daemon &
 recollindex -m -w 10
