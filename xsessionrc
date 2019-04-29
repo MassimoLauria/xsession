@@ -10,14 +10,15 @@ fi
     
 # screen 
 xset dpms 600
-xautolock -time 10 -locker "i3lock -i ~/.config/lock-wallpaper.png" &
+# xautolock -time 10 -locker "i3lock -i ~/.config/lock-wallpaper.png" &
 if [ -f $HOME/.config/wallpaper.jpg  ];then
     feh --bg-scale $HOME/.config/wallpaper.jpg 
 fi
+xautolock -time 10 -locker "i3lock -c 000000" &
 unclutter -root -idle 5 &
 
 # apps
-run_keybase -a
+run_keybase -g
 odrive &
 emacs --daemon &
 recollindex -m -w 10
