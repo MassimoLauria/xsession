@@ -19,7 +19,7 @@ unclutter -root -idle 5 &
 
 # apps
 run_keybase -g
-odrive &
+insync start &
 emacs --daemon &
 recollindex -m -w 10
 
