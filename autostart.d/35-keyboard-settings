@@ -1,40 +1,21 @@
 #!/bin/sh
 
 ## Keyboard shortcuts
-echo -n "XSession Autostart... XBindkeys "
-if [ -f /usr/bin/xbindkeys -a -f "$HOME/.xbindkeysrc.noauto" ]; then
-   xbindkeys -f "$HOME/.xbindkeysrc.noauto" &
-   echo "ON"
-else
-   echo "OFF"
-fi
+# echo -n "XSession Autostart... XBindkeys "
+# if [ -f /usr/bin/xbindkeys -a -f "$HOME/.xbindkeysrc.noauto" ]; then
+#    xbindkeys -f "$HOME/.xbindkeysrc.noauto" &
+#    echo "ON"
+# else
+#    echo "OFF"
+# fi
 
-
-## Accentee vowels on english keyboard
-echo -n "XSession Autostart... accented vowels setup"
-
-LAYOUT=`setxkbmap -print | grep xkb_symbols | sed 's|.*["+]\([^+"][^+"]\)["+].*|\1|'`
-DOIT="nay"
-
-case $LAYOUT in
-    it) # No need here
-        DOIT="nay"
-        ;;
-    us|gb)
-        DOIT="yeah"
-        ;;
-    *)
-        DOIT="yeah"
-        ;;
-esac
-
-if [ $DOIT = "yeah" ]; then
-    xmodmap -e "keysym a = a A a A agrave Agrave"
-    xmodmap -e "keysym e = e E e E egrave eacute"  # Italians needs both accents on e
-    xmodmap -e "keysym i = i I i I igrave Igrave"
-    xmodmap -e "keysym o = o O o O ograve Ograve"
-    xmodmap -e "keysym u = u U u U ugrave Ugrave"
-fi
-
-# echo -n "XSession Autostart... fix for M$ Ergo Keyboard 4000 (requires installed sudoers file)."
-# $(dirname $0)/tweak-for-mek4000.sh 2>/dev/null >/dev/null
+### Set X Keymap options for the Apple Magic Keyboard
+#
+# use right-option for Compose
+# use Caps-Lock as another Control
+# Swap left-option and left-command
+# use right-win as Lv3-modifier (i.e. AltGr)
+#
+APPLEMAGIC=$HOME/config/xsession/setxkbmap.applemagic
+PCUS=$HOME/config/xsession/setxkbmap.pcus
+setxkbmap -model $APPLEMAGIC

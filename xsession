@@ -4,7 +4,7 @@
 
 
 # Setup window manager
-WM=awesome
+WM=i3
 
 
 # Load User's environment
@@ -20,7 +20,7 @@ fi
 XMODMAP=$HOME/.Xmodmap
 XRESOURCES=$HOME/.Xresources
 XAUTOSTART=$CONFIGDIR/xsession/x-autostart.sh
- XAUTOSTOP=$CONFIGDIR/xsession/x-autostop.sh
+XAUTOSTOP=$CONFIGDIR/xsession/x-autostop.sh
 AUTOSTARTLOG=.x-autostart.log
 
 
@@ -40,19 +40,12 @@ else
     xset -dpms
 fi
 
-test -z $PREFERREDKBD || setxkbmap $PREFERREDKBD
 [ -f $XMODMAP ] && xmodmap $XMODMAP
 [ -f $XRESOURCES ] && xrdb $XRESOURCES
 
 
 # Various env variables to improve experience.
 export SDL_MOUSE_RELATIVE=0
-
-# Make java behave with AwesomeWM
-if [ x$WM = "xawesome" ]; then
-    export _JAVA_AWT_WM_NONREPARENTING=1
-fi
-
 
 # Start session
 

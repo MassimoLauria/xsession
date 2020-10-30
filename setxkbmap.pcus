@@ -1,0 +1,10 @@
+# -*- mode: conf -*-
+#
+# use Caps-Lock as another Control
+# use right-alt as Lv3-modifier (i.e. AltGr)
+#
+Rules    =  "evdev"
+Model    =  "pc105"
+Layout   =  "us"
+Variant  =  "massimolauria" # my variant that has to be configured and installed
+Options  =  "caps:ctrl_modifier,lv3:ralt_switch" 

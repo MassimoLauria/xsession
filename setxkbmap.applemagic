@@ -1,0 +1,12 @@
+# -*- mode: conf -*-
+#
+# use right-option for Compose
+# use Caps-Lock as another Control
+# Swap left-option and left-command
+# use right-win as Lv3-modifier (i.e. AltGr)
+#
+Rules    =  "evdev"
+Model    =  "pc105"
+Layout   =  "us"
+Variant  =  "massimolauria" # my variant that has to be configured and installed
+Options  =  "compose:ralt,caps:ctrl_modifier,altwin:swap_lalt_lwin,lv3:rwin_switch" 

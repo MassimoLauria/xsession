@@ -64,11 +64,6 @@ else
     echo "OFF"
 fi
 
-
-echo -n "XSession Autostart... fix for M$ Ergo Keyboard 4000 (requires installed sudoers file)."
-$(dirname $0)/tweak-for-mek4000.sh 2>/dev/null >/dev/null
-
-
 ###### Conditional applications #########
 
 
