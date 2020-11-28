@@ -1,12 +1,5 @@
 #!/bin/sh
 
-# X config files
-if [ -f $HOME/.Xmodmap ];then
-    /usr/bin/xmodmap $HOME/.Xmodmap
-fi
-if [ -f $HOME/.Xresources ];then
-    /usr/bin/xrdb -merge $HOME/.Xresources
-fi
     
 # screen 
 xset dpms 600
