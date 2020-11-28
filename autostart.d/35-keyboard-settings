@@ -18,4 +18,4 @@
 #
 APPLEMAGIC=$HOME/config/xsession/setxkbmap.applemagic
 PCUS=$HOME/config/xsession/setxkbmap.pcus
-setxkbmap -config $APPLEMAGIC
+setxkbmap -config $PCUS
