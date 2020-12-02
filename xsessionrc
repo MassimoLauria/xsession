@@ -10,6 +10,10 @@ fi
 xautolock -time 10 -locker "i3lock -c 000000" &
 unclutter -root -idle 5 &
 
+# setup us keyboard with additional character.
+# standard PC layout + accented vowels and composition
+setxkbmap -config ~/config/xsession/setxkbmap.pcus
+
 # apps
 run_keybase -g
 insync start &
