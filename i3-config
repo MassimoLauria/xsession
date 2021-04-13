@@ -40,7 +40,7 @@ focus_on_window_activation smart
 show_marks yes
 hide_edge_borders none
 new_window pixel 3
-new_float  normal 
+new_float  normal
 
 # start apps
 bindsym $mod+Return exec i3-sensible-terminal
@@ -55,7 +55,7 @@ bindsym $mod+Escape kill
 # start dmenu (a program launcher)
 # bindsym $mod+g exec dmenu_run
 # bindsym $mod+g exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+g exec --no-startup-id "rofi -combi-modi window,drun,ssh -show combi -modi combi"
+bindsym $mod+g exec --no-startup-id "rofi -combi-modi window,drun,ssh -show combi -modi combi -show-icons"
 
 # change focus
 bindsym $mod+j focus left
@@ -118,7 +118,7 @@ mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r restart, mode "default"
     bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -180,19 +180,19 @@ bar {
         hidden_state hide
         modifier $mod
         position top
+        tray_output primary
 }
 
-# audio volume keys
-set $volcmd exec --no-startup-id amixer set Master
-bindsym XF86AudioRaiseVolume $volcmd 10%+ unmute
-bindsym XF86AudioLowerVolume $volcmd 10%- unmute
-bindsym XF86AudioMute        $volcmd toggle  
-bindsym $mod+XF86AudioRaiseVolume $volcmd 10%+ unmute
-bindsym $mod+XF86AudioLowerVolume $volcmd 10%- unmute
-bindsym $mod+XF86AudioMute        $volcmd toggle  
-bindsym $mod+KP_Add      $volcmd 10%+ unmute
-bindsym $mod+KP_Subtract $volcmd 10%- unmute
-bindsym $mod+KP_Enter    $volcmd toggle  
+## Audio volume keys
+# Where is the audio going? (Speaker or Headphones)
+set $sink `pactl list short sinks | grep IDLE\|RUNNING | cut -f1`
+set $raisevolume exec --no-startup-id pactl set-sink-volume $sink -- +10%
+set $lowervolume exec --no-startup-id pactl set-sink-volume $sink -- -10%
+set $togglesound exec --no-startup-id pactl set-sink-mute $sink toggle
+
+bindsym XF86AudioRaiseVolume $raisevolume
+bindsym XF86AudioLowerVolume $lowervolume
+bindsym XF86AudioMute        $togglesound
 
 
 # How long does the urgency hint lasts?

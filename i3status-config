@@ -12,10 +12,11 @@ general {
         interval = 5
 }
 
-order += "cpu_usage"
+#order += "cpu_usage"
+order += "cpu_temperature 0"
 order += "disk /"
-order += "ethernet _first_"
-order += "tztime week"
+#order += "ethernet _first_"
+order += "wireless _first_"
 order += "tztime local"
 order += "volume master"
 
@@ -24,18 +25,24 @@ ethernet _first_ {
         format_down = "🖧 off"
 }
 
-tztime local {
-        format = "📅 %d %^b %Y 🕚 %H:%M"
+wireless _first_ {
+        format_up = "📶%quality - %ip"
+        format_down = "📶off"
 }
 
-tztime week {
-        format    = "%A W%W"
-        min_width = "mercoledì WXX"
-        align = right
+
+tztime local {
+        format = "📅 %A %d %^b %Y W%W 🕚 %H:%M"
 }
 
 cpu_usage {
-    format = "CPU %usage"
+    format = "CPU(S): %usage"
+    }
+
+cpu_temperature 0 {
+    format = "🌡 %degrees°C"
+    max_threshold = 80
+    path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
     }
 
 disk "/" {
