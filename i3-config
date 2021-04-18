@@ -184,8 +184,8 @@ bar {
 }
 
 ## Audio volume keys
-set $raisevolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-set $lowervolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+set $raisevolume exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ 0 & pactl set-sink-volume @DEFAULT_SINK@ +5%"
+set $lowervolume exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ 0 & pactl set-sink-volume @DEFAULT_SINK@ -5%"
 set $togglesound exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym XF86AudioRaiseVolume $raisevolume
@@ -194,7 +194,6 @@ bindsym XF86AudioMute        $togglesound
 bindsym $mod+XF86AudioRaiseVolume $raisevolume
 bindsym $mod+XF86AudioLowerVolume $lowervolume
 bindsym $mod+XF86AudioMute        $togglesound
-
 
 # How long does the urgency hint lasts?
 force_display_urgency_hint 3000 ms
