@@ -1,11 +1,11 @@
 #!/bin/sh
 
-    
-# screen 
+
+# screen
 xset dpms 600
 # xautolock -time 10 -locker "i3lock -i ~/.config/lock-wallpaper.png" &
 if [ -f $HOME/.config/wallpaper.jpg  ];then
-    feh --bg-scale $HOME/.config/wallpaper.jpg 
+    feh --bg-scale $HOME/.config/wallpaper.jpg
 fi
 xautolock -time 10 -locker "i3lock -c 000000" &
 unclutter -root -idle 5 &
@@ -22,5 +22,3 @@ recollindex -m -w 10
 
 # keyring
 gnome-keyring-daemon --start --components=secrets,pkcs11 >/dev/null
-
-

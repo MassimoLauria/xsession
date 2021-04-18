@@ -38,8 +38,8 @@ floating_modifier $mod
 focus_follows_mouse no
 focus_on_window_activation smart
 show_marks yes
-hide_edge_borders none
-new_window pixel 3
+hide_edge_borders smart
+new_window pixel 2
 new_float  normal
 
 # start apps
@@ -184,15 +184,16 @@ bar {
 }
 
 ## Audio volume keys
-# Where is the audio going? (Speaker or Headphones)
-set $sink `pactl list short sinks | grep IDLE\|RUNNING | cut -f1`
-set $raisevolume exec --no-startup-id pactl set-sink-volume $sink -- +10%
-set $lowervolume exec --no-startup-id pactl set-sink-volume $sink -- -10%
-set $togglesound exec --no-startup-id pactl set-sink-mute $sink toggle
+set $raisevolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+set $lowervolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+set $togglesound exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 bindsym XF86AudioRaiseVolume $raisevolume
 bindsym XF86AudioLowerVolume $lowervolume
 bindsym XF86AudioMute        $togglesound
+bindsym $mod+XF86AudioRaiseVolume $raisevolume
+bindsym $mod+XF86AudioLowerVolume $lowervolume
+bindsym $mod+XF86AudioMute        $togglesound
 
 
 # How long does the urgency hint lasts?
