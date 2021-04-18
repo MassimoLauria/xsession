@@ -55,7 +55,9 @@ bindsym $mod+Escape kill
 # start dmenu (a program launcher)
 # bindsym $mod+g exec dmenu_run
 # bindsym $mod+g exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+g exec --no-startup-id "rofi -combi-modi window,drun,ssh -show combi -modi combi -show-icons"
+bindsym $mod+g exec --no-startup-id "rofi -combi-modi window,drun,ssh -show combi -modi combi -show-icons -theme Monokai"
+bindsym $mod+slash exec --no-startup-id "~/config/desktop/recoll-search.sh"
+
 
 # change focus
 bindsym $mod+j focus left
