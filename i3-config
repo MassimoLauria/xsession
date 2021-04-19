@@ -197,5 +197,15 @@ bindsym $mod+XF86AudioRaiseVolume $raisevolume
 bindsym $mod+XF86AudioLowerVolume $lowervolume
 bindsym $mod+XF86AudioMute        $togglesound
 
+
+# Media player controls
+#
+# The utiliy playerctl takes care of finding the
+# media player and sending the dbus commands
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # How long does the urgency hint lasts?
 force_display_urgency_hint 3000 ms
