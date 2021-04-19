@@ -55,8 +55,12 @@ bindsym $mod+Escape kill
 # start dmenu (a program launcher)
 # bindsym $mod+g exec dmenu_run
 # bindsym $mod+g exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+g exec --no-startup-id "rofi -combi-modi window,drun,ssh -show combi -modi combi -show-icons -theme Monokai"
-bindsym $mod+slash exec --no-startup-id "~/config/desktop/recoll-search.sh"
+set $launchapp "rofi -combi-modi window,drun,ssh -show combi -modi combi -show-icons -theme Monokai"
+set $desktopsearch "~/config/scripts/recoll-search.sh"
+set $websearch rofi  -p "Search on web: " -lines 10 -show search -modi search:~/config/scripts/rofi-web-search.py -i -theme Monokai
+bindsym $mod+g exec --no-startup-id $launchapp
+# bindsym $mod+slash exec --no-startup-id $desktopsearch
+bindsym $mod+slash exec --no-startup-id $websearch
 
 
 # change focus
@@ -111,12 +115,12 @@ bindsym $mod+Shift+o move workspace next
 
 
 # Session control
-set $Locker xautolock -locknow && sleep 1
-bindsym $mod+Pause exec --no-startup-id $Locker
+set $Lock i3lock -i ~/personal/conf/lockscreen.jpg
+bindsym $mod+Pause exec --no-startup-id $Lock
 
 set $mode_system System (l) lock, (e) logout, (r) restart i3 (R) reboot (S) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id $Lock, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r restart, mode "default"
     bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
@@ -180,9 +184,13 @@ bar {
         status_command i3status
         mode hide
         hidden_state hide
+        workspace_min_width 40
         modifier $mod
         position top
         tray_output primary
+        colors {
+            background #001133
+        }
 }
 
 ## Audio volume keys
@@ -209,3 +217,9 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # How long does the urgency hint lasts?
 force_display_urgency_hint 3000 ms
+
+# Gnome settings daemon
+exec --no-startup-id /usr/libexec/gsd-xsettings
+
+# autostart
+exec --no-startup-id dex -a -s ~/config/xsession/autostart/

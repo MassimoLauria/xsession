@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Certificate and Key Storage
+Comment=GNOME Keyring
+Exec=/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+NoDisplay=true
+X-GNOME-Autostart-Phase=PreDisplayServer
+X-GNOME-AutoRestart=false
+X-GNOME-Autostart-Notify=true
+X-Ubuntu-Gettext-Domain=gnome-keyring

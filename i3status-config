@@ -26,8 +26,8 @@ ethernet _first_ {
 }
 
 wireless _first_ {
-        format_up = "📶%quality - %ip"
-        format_down = "📶off"
+        format_up = "🖧 %ip"
+        format_down = "🖧 off"
 }
 
 

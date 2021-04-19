@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Copyright (C) 2010, 2011, 2012, 2020 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2020, 2021 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2020-11-28, 22:45 (CET) Massimo Lauria"
+# Time-stamp: "2021-04-20, 01:18 (CEST) Massimo Lauria"
 
 # Description::
 #
@@ -83,8 +83,11 @@ echo "OK."
 echo -n "Installing new config files.."
 $RM -f $HOME/.xsessionrc
 $RM -f $HOME/.xsession
+$RM -f $HOME/.config/autostart/
 $LN -s $PWD/xsession    $HOME/.xsession
+$LN -s $PWD/xsessionrc  $HOME/.xsessionrc
+$LN -s $PWD/autostart   $HOME/.config/autostart
+
 echo "OK"
 
 echo "Bye, bye!"
-

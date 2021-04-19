@@ -1,24 +1,24 @@
 #!/bin/sh
 # Massimo Xsession Script
 
-# Setup window manager
-WM=i3
-
-
 # Load User's environment
-[ -f ~/config/shell/shenv-common    ] && . ~/config/shell/shenv-common
-[ -f ~/personal/conf/shenv-personal ] && . ~/personal/conf/shenv-personal
+[ -f ~/config/shell/shenv-common    ] && . "$HOME/config/shell/shenv-common"
+[ -f ~/personal/conf/shenv-personal ] && . "$HOME/personal/conf/shenv-personal"
 
 if [ -z "$CONFIGDIR" ]; then
     CONFIGDIR=$HOME/config
 fi
 
+# screen
+xset dpms 600
+if [ -f "$HOME/personal/conf/wallpaper.jpg"  ];then
+    feh --bg-scale "$HOME/personal/conf/wallpaper.jpg"
+fi
+unclutter -root -idle 5 &
 
-# Files
-XAUTOSTART=$CONFIGDIR/xsession/x-autostart.sh
-XAUTOSTOP=$CONFIGDIR/xsession/x-autostop.sh
-AUTOSTARTLOG=.x-autostart.log
-
+# setup us keyboard with additional character.
+# standard PC layout + accented vowels and composition
+setxkbmap -config $HOME/config/xsession/setxkbmap.pcus
 
 # Umask settings
 umask 0077
@@ -27,7 +27,4 @@ umask 0077
 export SDL_MOUSE_RELATIVE=0
 
 # Start session
-$XAUTOSTART &  # preload programs
-$WM            # launch wm
-$XAUTOSTOP     # clean up
-
+exec i3
