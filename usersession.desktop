@@ -1,0 +1,7 @@
+# This file goes into /usr/share/xsessions/
+[Desktop Entry]
+Name=User X Session
+Comment=The user defined Xsession in ~/.xsession
+Exec=/etc/X11/Xsession
+Type=Application
+DesktopNames=Xsession
