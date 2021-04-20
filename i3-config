@@ -1,6 +1,6 @@
-# -*- mode: sh[conf] -*-
+# -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-04-20, 13:10 (CEST) Massimo Lauria>
+# Time-stamp: <2021-04-20, 20:14 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -23,15 +23,29 @@ font pango:DejaVu Sans Mono 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Behaviour
+# Focus behaviour
 focus_follows_mouse no
 focus_on_window_activation smart
+
+# Borders
+set $border 2
 show_marks yes
 hide_edge_borders smart
-new_window pixel 2
-new_float  normal
+default_border pixel $border
+default_floating_border pixel $border
+gaps inner 20
+gaps outer 10
 
-# start apps
+
+# titlebars are only shown whem there are marks.
+title_align left
+bindsym $mod+comma exec i3-input -F 'mark --add %s' -l 1 -P 'Set mark: ', border normal $border
+bindsym $mod+period exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto marked windows: '
+bindsym $mod+BackSpace unmark, border pixel $border
+
+
+
+# basic apps
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+e      exec emacsclient -c
 bindsym $mod+w      exec firefox --new-tab
@@ -131,10 +145,12 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym i resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
-        bindsym Shift+j resize shrink width 30 px or 30 ppt
-        bindsym Shift+k resize grow height 30 px or 30 ppt
-        bindsym Shift+i resize shrink height 30 px or 30 ppt
-        bindsym Shift+l resize grow width 30 px or 30 ppt
+        # gaps -,= to change gaps between windows
+        bindsym minus gaps inner current plus 10x
+        bindsym equal gaps inner current minus 10x
+        # gaps Shift and -,= to change gaps to the border
+        bindsym Shift+minus gaps outer current plus 10x
+        bindsym Shift+equal gaps outer current minus 10x
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -162,7 +178,6 @@ mode "move" {
 
 bindsym $mod+r mode "resize"
 bindsym $mod+m mode "move"
-
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -206,3 +221,8 @@ force_display_urgency_hint 3000 ms
 
 # autostart
 exec --no-startup-id dex -a -s $autostartpath
+
+## Specific tuning for some applications
+# Zoom
+for_window [class="zoom" title="Settings"] floating enable, move position center
+for_window [class="zoom" title="Chat"] floating enable,resize set 600 500,move absolute position center
