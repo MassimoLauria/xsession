@@ -1,13 +1,16 @@
 # -*- mode: sh[conf] -*-
-# i3 config file (2021-04-20)
+# i3 config file (v4)
+# Time-stamp: <2021-04-20, 13:10 (CEST) Massimo Lauria>
 
-#paths
+# See http://i3wm.org/docs/userguide.html for help!
+
+set $mod Mod4
+
+#Paths
 set $wallpaper ~/personal/conf/wallpaper.jpg
 set $lockscreenpic ~/personal/conf/lockscreen.jpg
 set $autostartpath ~/config/xsession/autostart/
 
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-set $mod Mod4
 
 # Font For Window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -38,15 +41,13 @@ bindsym $mod+f      exec nautilus -n
 # kill focused window
 bindsym $mod+Escape kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+g exec dmenu_run
-# bindsym $mod+g exec --no-startup-id i3-dmenu-desktop
+# Launchers
 set $launchapp "rofi -combi-modi window,drun,ssh -show combi -modi combi -show-icons -theme Monokai"
 set $desktopsearch "~/config/scripts/recoll-search.sh"
 set $websearch rofi  -p "Search on web: " -lines 10 -show search -modi search:~/config/scripts/rofi-web-search.py -i -theme Monokai
 bindsym $mod+g exec --no-startup-id $launchapp
-# bindsym $mod+slash exec --no-startup-id $desktopsearch
-bindsym $mod+slash exec --no-startup-id $websearch
+bindsym $mod+slash exec --no-startup-id $desktopsearch
+# bindsym $mod+slash exec --no-startup-id $websearch
 
 
 # change focus
