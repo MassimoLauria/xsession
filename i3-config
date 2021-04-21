@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-04-20, 20:14 (CEST) Massimo Lauria>
+# Time-stamp: <2021-04-21, 02:38 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -28,13 +28,18 @@ focus_follows_mouse no
 focus_on_window_activation smart
 
 # Borders
-set $border 2
+set $border 0
 show_marks yes
 hide_edge_borders smart
 default_border pixel $border
 default_floating_border pixel $border
-gaps inner 20
+gaps inner 15
 gaps outer 10
+
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #222222
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 
 
 # titlebars are only shown whem there are marks.
@@ -42,6 +47,7 @@ title_align left
 bindsym $mod+comma exec i3-input -F 'mark --add %s' -l 1 -P 'Set mark: ', border normal $border
 bindsym $mod+period exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto marked windows: '
 bindsym $mod+BackSpace unmark, border pixel $border
+
 
 
 
@@ -116,7 +122,7 @@ bindsym $mod+Shift+o move workspace next
 
 
 # Session control
-bindsym $mod+Pause exec --no-startup-id
+bindsym $mod+Pause exec --no-startup-id i3lock -i $lockscreenpic, mode "default"
 
 set $mode_system System (l) lock, (e) logout, (r) restart i3 (R) reboot (S) shutdown
 mode "$mode_system" {
@@ -220,6 +226,7 @@ bindsym XF86AudioPrev exec playerctl previous
 force_display_urgency_hint 3000 ms
 
 # autostart
+exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
 exec --no-startup-id dex -a -s $autostartpath
 
 ## Specific tuning for some applications
