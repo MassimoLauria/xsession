@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-04-24, 18:00 (CEST) Massimo Lauria>
+# Time-stamp: <2021-04-27, 19:24 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -33,6 +33,7 @@ show_marks yes
 hide_edge_borders smart
 default_border pixel $border
 default_floating_border pixel $border
+popup_during_fullscreen smart
 gaps inner 15
 gaps outer 10
 
@@ -233,4 +234,4 @@ exec --no-startup-id dex -a -s $autostartpath
 ## Specific tuning for some applications
 # Zoom
 for_window [class="zoom" title="Settings"] floating enable, move position center
-for_window [class="zoom" title="Chat"] floating enable,resize set 600 500,move absolute position center
+for_window [class="zoom" title="Chat"] floating enable, resize set 500 400,move position 2000 px 950 px
