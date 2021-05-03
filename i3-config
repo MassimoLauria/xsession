@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-04-27, 19:24 (CEST) Massimo Lauria>
+# Time-stamp: <2021-05-03, 10:01 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -213,6 +213,10 @@ bindsym XF86AudioMute        $togglesound
 bindsym $mod+XF86AudioRaiseVolume $raisevolume
 bindsym $mod+XF86AudioLowerVolume $lowervolume
 bindsym $mod+XF86AudioMute        $togglesound
+# backup volume keys (when the previous are missing)
+bindsym $mod+KP_Add      $raisevolume
+bindsym $mod+KP_Subtract $lowervolume
+bindsym $mod+KP_Divide   $togglesound
 
 
 # Media player controls
@@ -223,6 +227,7 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioStop exec playerctl stop
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
 
 # How long does the urgency hint lasts?
 force_display_urgency_hint 3000 ms
