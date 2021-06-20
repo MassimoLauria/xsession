@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-05-03, 10:01 (CEST) Massimo Lauria>
+# Time-stamp: <2021-06-19, 12:05 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -233,7 +233,7 @@ bindsym XF86AudioPrev exec playerctl previous
 force_display_urgency_hint 3000 ms
 
 # autostart
-exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
+# exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
 exec --no-startup-id dex -a -s $autostartpath
 
 ## Specific tuning for some applications

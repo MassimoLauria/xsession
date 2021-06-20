@@ -15,7 +15,6 @@ if [ -f "$HOME/personal/conf/wallpaper.jpg"  ];then
     feh --bg-scale "$HOME/personal/conf/wallpaper.jpg"
 fi
 unclutter -root -idle 5 &
-picon -b -config "$HOME"/config/xsession/picon.conf
 
 # setup us keyboard with additional character.
 # standard PC layout + accented vowels and composition
