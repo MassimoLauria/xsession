@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-06-21, 17:47 (CEST) Massimo Lauria>
+# Time-stamp: <2021-06-30, 18:20 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -29,28 +29,29 @@ focus_on_window_activation smart
 
 # Borders
 set $border 0
+set $flborder 0
 show_marks yes
 hide_edge_borders smart
 default_border pixel $border
-default_floating_border pixel $border
+default_floating_border pixel $flborder
 popup_during_fullscreen smart
 gaps inner 15
 gaps outer 10
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #222222
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #3f3f3f
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #000000
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
 
 # titlebars are only shown whem there are marks.
 title_align left
 bindsym $mod+comma exec i3-input -F 'mark --add %s' -l 1 -P 'Set mark: ', border normal $border
 bindsym $mod+period exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto marked windows: '
 bindsym $mod+BackSpace unmark, border pixel $border
-
-
-
 
 # basic apps
 bindsym $mod+Return exec i3-sensible-terminal
@@ -233,8 +234,11 @@ bindsym XF86AudioPrev exec playerctl previous
 force_display_urgency_hint 3000 ms
 
 # autostart
-exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
 exec --no-startup-id dex -a -s $autostartpath
+
+# Picom 
+exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
+exec_always --no-startup-id ~/.local/bin/flashfocus --config ~/config/xsession/flashfocus.yml
 
 ## Specific tuning for some applications
 # Zoom
