@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-06-30, 18:20 (CEST) Massimo Lauria>
+# Time-stamp: <2021-07-05, 17:06 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -37,6 +37,7 @@ default_floating_border pixel $flborder
 popup_during_fullscreen smart
 gaps inner 15
 gaps outer 10
+smart_gaps on
 
 # Colors
 # class                 border  backgr. text    indicator child_border
