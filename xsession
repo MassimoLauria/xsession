@@ -10,7 +10,8 @@ if [ -z "$CONFIGDIR" ]; then
 fi
 
 # screen
-xset dpms 0
+xset -dpms
+xset s off
 if [ -f "$HOME/personal/conf/wallpaper.jpg"  ];then
     feh --bg-scale "$HOME/personal/conf/wallpaper.jpg"
 fi
