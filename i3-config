@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2021-07-05, 17:06 (CEST) Massimo Lauria>
+# Time-stamp: <2022-01-07, 12:47 (CET) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -39,6 +39,7 @@ gaps inner 15
 gaps outer 10
 smart_gaps on
 
+
 # Colors
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #2e9ef4   #3f3f3f
@@ -65,13 +66,14 @@ bindsym $mod+f      exec nautilus -n
 bindsym $mod+Escape kill
 
 # Launchers
-set $launchapp "rofi -combi-modi window,drun,ssh -show combi -modi combi -show-icons -theme Monokai"
+set $launchapp "rofi ``-combi-modi window,drun,ssh -show combi -modi combi -show-icons -theme Monokai"
 set $winswitch "rofi -show window -show-icons -theme Monokai"
 set $desktopsearch "~/config/scripts/recoll-search.sh"
 set $websearch rofi  -p "Search on web: " -lines 10 -show search -modi search:~/config/scripts/rofi-web-search.py -i -theme paper-float
 bindsym $mod+g exec --no-startup-id $launchapp
+bindsym $mod+h exec --no-startup-id $desktopsearch
 bindsym $mod+slash exec --no-startup-id $websearch
-bindsym Ctrl+Mod1+Tab exec --no-startup-id $winswitch
+
 
 
 # change focus
