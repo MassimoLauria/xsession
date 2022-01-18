@@ -12,8 +12,8 @@ fi
 # screen
 xset -dpms
 xset s off
-if [ -f "$HOME/personal/conf/wallpaper.jpg"  ];then
-    feh --bg-scale "$HOME/personal/conf/wallpaper.jpg"
+if [ -d "$HOME/personal/wallpaper/"  ];then
+    feh --no-fehbg --image-bg '#444' --bg-max --recursive --randomize "$HOME/personal/wallpaper/"
 fi
 unclutter -root -idle 5 &
 
