@@ -12,9 +12,9 @@ fi
 # screen
 xset -dpms
 xset s off
-if [ -d "$HOME/personal/wallpaper/"  ];then
-    feh --no-fehbg --image-bg '#444' --bg-max --recursive --randomize "$HOME/personal/wallpaper/"
-fi
+# if [ -d "$HOME/personal/wallpaper/"  ];then
+#     feh --image-bg '#444' --bg-max --recursive --randomize "$HOME/personal/wallpaper/"
+# fi
 unclutter -root -idle 5 &
 
 # setup us keyboard with additional character.

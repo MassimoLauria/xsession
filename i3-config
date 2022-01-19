@@ -1,16 +1,15 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2022-01-07, 12:47 (CET) Massimo Lauria>
+# Time-stamp: <2022-01-19, 16:42 (CET) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
 set $mod Mod4
 
 #Paths
-set $wallpaper ~/personal/conf/wallpaper.jpg
-set $lockscreenpic ~/personal/conf/lockscreen.jpg
+set $bgcmd feh --image-bg '#444' --bg-max --recursive --randomize "$HOME/personal/wallpaper/"
 set $autostartpath ~/config/xsession/autostart/
-
+set $lockscreencmd ~/config/xsession/lockscreen.sh
 
 # Font For Window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -128,11 +127,13 @@ bindsym $mod+Shift+o move workspace next
 
 
 # Session control
-bindsym $mod+Pause exec --no-startup-id i3lock -i $lockscreenpic, mode "default"
+bindsym $mod+Pause exec --no-startup-id $lockscreencmd, mode "default"
 
-set $mode_system System (l) lock, (e) logout, (r) restart i3 (R) reboot (S) shutdown
+
+set $mode_system System (b) background (l) lock, (e) logout, (r) restart i3 (R) reboot (S) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock -i $lockscreenpic, mode "default"
+    bindsym b exec --no-startup-id $bgcmd
+    bindsym l exec --no-startup-id $lockscreencmd, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym r restart, mode "default"
     bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
@@ -237,6 +238,7 @@ bindsym XF86AudioPrev exec playerctl previous
 force_display_urgency_hint 3000 ms
 
 # autostart
+exec --no-startup-id $bgcmd
 exec --no-startup-id dex -a -s $autostartpath
 
 # Picom 
