@@ -9,13 +9,12 @@ if [ -z "$CONFIGDIR" ]; then
     CONFIGDIR=$HOME/config
 fi
 
-# screen
+# screen (no screensaver, tablet screen off by default)
 xset -dpms
 xset s off
-# if [ -d "$HOME/personal/wallpaper/"  ];then
-#     feh --image-bg '#444' --bg-max --recursive --randomize "$HOME/personal/wallpaper/"
-# fi
+xrandr --output DP-2 --off 2>| /dev/null
 unclutter -root -idle 5 &
+
 
 # setup us keyboard with additional character.
 # standard PC layout + accented vowels and composition
