@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=yEd Graph Editor
+Comment=Edit graphml files in yed
+Exec=/home/massimo/.local/lib/yed/yEd %F
+Terminal=false
+Type=Application
+Icon=/home/massimo/.local/lib/yed/.install4j/yEd.png
+Categories=Application;Office
+StartupNotify=false
+MimeType=application/xml;application/x-graphml+xml;
+NoDisplay=false
