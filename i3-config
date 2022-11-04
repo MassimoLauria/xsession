@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2022-02-02, 10:48 (CET) Massimo Lauria>
+# Time-stamp: <2022-11-04, 16:30 (CET) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -245,7 +245,10 @@ exec --no-startup-id dex -a -s $autostartpath
 exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
 exec_always --no-startup-id ~/.local/bin/flashfocus --config ~/config/xsession/flashfocus.yml
 
-## Specific tuning for some applications
+## Specific tuning Zoom
 # Zoom
-for_window [class="zoom" title="Settings"] floating enable, move position center
-for_window [class="zoom" title="Chat"] floating enable, resize set 500 400,move position 2000 px 950 px
+for_window [class="zoom"] floating enable, border pixel 1
+for_window [class="zoom" title="Settings"] floating enable, move position center, border pixel 1
+for_window [class="zoom" title="Chat"] floating enable, resize set 500 400,move position 2000 px 950 px, border pixel 1
+for_window [class="zoom" title="Zoom - Licensed Account"] floating disable, border none
+for_window [class="zoom" title="Zoom Meeting"] floating disable, border none 
