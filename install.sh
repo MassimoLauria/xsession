@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Copyright (C) 2010, 2011, 2012, 2020, 2021 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2020, 2021, 2023 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2021-04-20, 01:18 (CEST) Massimo Lauria"
+# Time-stamp: "2023-02-20, 11:57 (CET) Massimo Lauria"
 
 # Description::
 #
@@ -83,10 +83,14 @@ echo "OK."
 echo -n "Installing new config files.."
 $RM -f $HOME/.xsessionrc
 $RM -f $HOME/.xsession
-$RM -f $HOME/.config/autostart/
 $LN -s $PWD/xsession    $HOME/.xsession
 $LN -s $PWD/xsessionrc  $HOME/.xsessionrc
-$LN -s $PWD/autostart   $HOME/.config/autostart
+$LN -s $PWD/autostart/*.desktop   $HOME/.config/autostart
+$MKDIR -p $HOME/.config/i3
+$MKDIR -p $HOME/.config/i3status
+$LN -s $PWD/i3-config $HOME/.config/i3/config
+$LN -s $PWD/i3status-config $HOME/.config/i3status/config
+
 
 echo "OK"
 
