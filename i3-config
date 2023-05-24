@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2022-11-09, 20:48 (CET) Massimo Lauria>
+# Time-stamp: <2023-05-24, 15:36 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -244,6 +244,9 @@ exec --no-startup-id dex -a -s $autostartpath
 # Picom 
 exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
 exec_always --no-startup-id ~/.local/bin/flashfocus --config ~/config/xsession/flashfocus.yml
+
+# Get ibus oout of my keyboard
+exec --no-startup-id ibus exit
 
 ## Specific tuning Zoom
 # Zoom
