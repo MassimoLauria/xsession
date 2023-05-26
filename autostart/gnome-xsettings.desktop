@@ -1,5 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=GNOME Settings Daemon's xsettings plugin
-Exec=/usr/libexec/gsd-xsettings
-NoDisplay=true
