@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2023-05-24, 15:36 (CEST) Massimo Lauria>
+# Time-stamp: <2023-06-07, 01:05 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -255,3 +255,6 @@ for_window [class="zoom" title="Settings"] floating enable, move position center
 for_window [class="zoom" title="Chat"] floating enable, resize set 500 400,move position 2000 px 950 px, border pixel 1
 for_window [class="zoom" title="Zoom - Licensed Account"] floating disable, border none
 for_window [class="zoom" title="Zoom Meeting"] floating disable, border none 
+
+# Emacs floating frame
+for_window [instance="floatemacs"] floating enable, move position center
