@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2023-06-07, 01:05 (CEST) Massimo Lauria>
+# Time-stamp: <2023-12-19, 19:13 (CET) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -240,6 +240,8 @@ force_display_urgency_hint 3000 ms
 # autostart
 exec --no-startup-id $bgcmd
 exec --no-startup-id dex -a -s $autostartpath
+
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # Picom 
 exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
