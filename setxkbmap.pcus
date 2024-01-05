@@ -7,4 +7,4 @@ Rules    =  "evdev"
 Model    =  "pc105"
 Layout   =  "us"
 Variant  =  "massimolauria" # my variant that has to be configured and installed
-Options  =  "caps:ctrl_modifier,lv3:ralt_switch" 
+Options  =  "caps:ctrl_modifier,lv3:ralt_switch:compose:rwin,compose:menu" 
