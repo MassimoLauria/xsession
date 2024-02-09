@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # sway config file
-# Time-stamp: <2024-02-09, 22:04 (CET) Massimo Lauria>
+# Time-stamp: <2024-02-09, 22:48 (CET) Massimo Lauria>
 
 
 set $mod Mod4
@@ -233,6 +233,10 @@ bindsym $mod+XF86AudioMute        $togglesound
 bindsym $mod+KP_Add      $raisevolume
 bindsym $mod+KP_Subtract $lowervolume
 bindsym $mod+KP_Divide   $togglesound
+
+
+exec_always flashfocus --config ~/config/xsession/flashfocus.yml
+
 
 
 # Media player controls

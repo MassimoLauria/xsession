@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2023-12-19, 19:13 (CET) Massimo Lauria>
+# Time-stamp: <2024-02-09, 22:47 (CET) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -245,7 +245,7 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 
 # Picom 
 exec --no-startup-id picom -b --config ~/config/xsession/picom.conf
-exec_always --no-startup-id ~/.local/bin/flashfocus --config ~/config/xsession/flashfocus.yml
+exec_always --no-startup-id flashfocus --config ~/config/xsession/flashfocus.yml
 
 # Get ibus oout of my keyboard
 exec --no-startup-id ibus exit
