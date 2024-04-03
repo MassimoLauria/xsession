@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2024-02-09, 22:47 (CET) Massimo Lauria>
+# Time-stamp: <2024-04-03, 11:39 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -107,7 +107,7 @@ bindsym $mod+0 workspace 10
 bindsym $mod+u workspace prev
 bindsym $mod+o workspace next
 # last two workspaces
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 bindsym $mod+Tab workspace back_and_forth
 
 
