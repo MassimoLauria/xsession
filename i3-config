@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2024-04-03, 11:39 (CEST) Massimo Lauria>
+# Time-stamp: <2024-04-25, 18:46 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -10,10 +10,13 @@ set $mod Mod4
 set $bgcmd feh --image-bg '#333' --bg-max --recursive --randomize "$HOME/personal/wallpaper/aspect169/"
 set $autostartpath ~/config/xsession/autostart/
 set $lockscreencmd ~/config/xsession/lockscreen.sh
-
+set $screenshot import -window root ~/`date +%Y%m%d_%H%M%S_screenshot.jpg`
 # Font For Window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:monospace 8
+
+# Screenshot
+bindsym Print exec $screenshot
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
