@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2024-04-25, 18:46 (CEST) Massimo Lauria>
+# Time-stamp: <2024-11-30, 21:31 (CET) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -128,6 +128,9 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+u move workspace prev
 bindsym $mod+Shift+o move workspace next
 
+# Move workspaces between monitors
+bindsym $mod+Ctrl+o move workspace to output down
+bindsym $mod+Ctrl+u move workspace to output up
 
 # Session control
 bindsym $mod+Pause exec --no-startup-id $lockscreencmd, mode "default"
