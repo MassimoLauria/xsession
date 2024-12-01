@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2024-11-30, 21:31 (CET) Massimo Lauria>
+# Time-stamp: <2024-12-01, 15:50 (CET) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -70,13 +70,11 @@ bindsym $mod+Escape kill
 # Launchers
 set $launchapp "rofi ``-combi-modi window,drun,ssh -show combi -modi combi -show-icons -theme Monokai"
 set $winswitch "rofi -show window -show-icons -theme Monokai"
-set $desktopsearch "~/config/scripts/recoll-search.sh"
+set $desktopsearch "~/config/scripts/rofi-file-search.sh"
 set $websearch rofi  -p "Search on web: " -lines 10 -show search -modi search:~/config/scripts/rofi-web-search.py -i -theme paper-float
 bindsym $mod+g exec --no-startup-id $launchapp
 bindsym $mod+h exec --no-startup-id $desktopsearch
 bindsym $mod+slash exec --no-startup-id $websearch
-
-
 
 # change focus
 bindsym $mod+j focus left
