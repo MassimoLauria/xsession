@@ -73,6 +73,8 @@ xkb_symbols "massimolauria" {
 
 * Add the following in the list of variant of the us layout
 
+  This goes to file =/usr/share/X11/xkb/rules/evdev.xml=
+
   Find the <variantList>...</variantList> part in the =us= layout.
   
 #+BEGIN_EXAMPLE
