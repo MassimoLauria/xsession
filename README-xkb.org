@@ -68,6 +68,8 @@ xkb_symbols "massimolauria" {
     key <AB10> { [     slash,   question,      division,     questiondown ] };
 
     include "level3(ralt_switch)"
+
+};
 #+END_EXAMPLE
 
 
