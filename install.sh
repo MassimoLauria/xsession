@@ -71,10 +71,8 @@ echo "OK."
 
 # Do install
 echo -n "Installing new config files.."
-rm -f $HOME/.xsessionrc
 rm -f $HOME/.xsession
 ln -s $PWD/xsession    $HOME/.xsession
-ln -s $PWD/xsessionrc  $HOME/.xsessionrc
 ln -s $PWD/autostart/*.desktop   $HOME/.config/autostart
 mkdir -p $HOME/.config/i3
 mkdir -p $HOME/.config/i3status
