@@ -1,20 +1,16 @@
 #!/bin/sh
 
-# Copyright (C) 2010, 2011, 2012, 2020, 2021, 2023 by Massimo Lauria <lauria.massimo@gmail.com>
+# Copyright (C) 2010, 2011, 2012, 2020, 2021, 2023, 2025 by Massimo Lauria <lauria.massimo@gmail.com>
 #
 # Created   : "2011-03-05, sabato 01:03 (CET) Massimo Lauria"
-# Time-stamp: "2023-02-20, 11:57 (CET) Massimo Lauria"
+# Time-stamp: "2025-04-29, 12:03 (CEST) Massimo Lauria"
 
 # Description::
 #
 # Script to setup my xsession configuration.
 
 # -------------------- Env Variables ------------------------
-CP=cp
-LN=ln
-RM=rm
 FILE_NOT_FOUND=127
-
 
 # ------------------- Utilities -----------------------------
 require_program()
@@ -44,7 +40,7 @@ backup_maybe() {
 # Check backup possibility.
     if [ $# -ne 1 ]; then echo "Wrong argument number."; exit 1; fi
     if [ -e $1 ]; then
-        $CP -af $1 $1.bak.`date +%Y-%m-%d.%H.%M.%S`
+        cp -af $1 $1.bak.`date +%Y-%m-%d.%H.%M.%S`
     fi
 }
 
@@ -68,12 +64,6 @@ cd $(dirname $0)
 
 issue_warning_on_pwd "config/xsession"
 
-echo "Check for the present of basic programs"
-require_program $CP
-require_program $LN
-require_program $RM
-echo ""
-
 # Do backups
 echo -n "Backing up old config files..."
 backup_maybe $HOME/.xsession
@@ -81,15 +71,15 @@ echo "OK."
 
 # Do install
 echo -n "Installing new config files.."
-$RM -f $HOME/.xsessionrc
-$RM -f $HOME/.xsession
-$LN -s $PWD/xsession    $HOME/.xsession
-$LN -s $PWD/xsessionrc  $HOME/.xsessionrc
-$LN -s $PWD/autostart/*.desktop   $HOME/.config/autostart
-$MKDIR -p $HOME/.config/i3
-$MKDIR -p $HOME/.config/i3status
-$LN -s $PWD/i3-config $HOME/.config/i3/config
-$LN -s $PWD/i3status-config $HOME/.config/i3status/config
+rm -f $HOME/.xsessionrc
+rm -f $HOME/.xsession
+ln -s $PWD/xsession    $HOME/.xsession
+ln -s $PWD/xsessionrc  $HOME/.xsessionrc
+ln -s $PWD/autostart/*.desktop   $HOME/.config/autostart
+mkdir -p $HOME/.config/i3
+mkdir -p $HOME/.config/i3status
+ln -s $PWD/i3-config $HOME/.config/i3/config
+ln -s $PWD/i3status-config $HOME/.config/i3status/config
 
 
 echo "OK"
