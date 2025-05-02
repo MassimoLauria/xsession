@@ -1,0 +1,19 @@
+[Default Applications]
+application/pdf=okularApplication_pdf.desktop;org.gnome.Evince.desktop;
+application/zip=xarchiver.desktop
+inode/directory=thunar.desktop
+application/x-mobipocket-ebook=com.github.johnfactotum.Foliate.desktop
+application/epub+zip=com.github.johnfactotum.Foliate.desktop
+application/vnd.comicbook+zip=net.sourceforge.mcomix.desktop
+
+[Added Associations]
+application/pdf=okularApplication_pdf.desktop;
+application/vnd.comicbook-rar=net.sourceforge.mcomix.desktop;org.gnome.Evince.desktop;
+text/x-python=emacsclient.desktop;
+application/zip=xarchiver.desktop;
+inode/directory=thunar.desktop;
+application/x-mobipocket-ebook=com.github.johnfactotum.Foliate.desktop;
+application/epub+zip=com.github.johnfactotum.Foliate.desktop;
+application/vnd.comicbook+zip=net.sourceforge.mcomix.desktop;
+application/x-shellscript=emacsclient.desktop;
+video/x-matroska=mpv.desktop;
