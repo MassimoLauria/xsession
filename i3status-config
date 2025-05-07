@@ -15,20 +15,20 @@ general {
 #order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "disk /"
-#order += "ethernet _first_"
+order += "ethernet _first_"
 order += "wireless _first_"
-#order += "path_exists VPN"
+# order += "path_exists VPN"
 order += "tztime local"
 order += "volume master"
 
 ethernet _first_ {
         format_up = "🖧 %ip"
-        format_down = "🖧 off"
+        format_down = ""
 }
 
 wireless _first_ {
         format_up = "🖧 %ip"
-        format_down = "🖧 off"
+        format_down = ""
 }
 
 path_exists VPN {
