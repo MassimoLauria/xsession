@@ -2,7 +2,7 @@
 # Massimo Xsession Script
 
 # Load User's environment
-[ -f ~/config/shell/shenv-common    ] && . "$HOME/config/shell/shenv-common"
+[ -f ~/config/shell/sh.d/paths.sh   ] && . "$HOME/config/shell/sh.d/paths.sh"
 [ -f ~/personal/conf/shenv-personal ] && . "$HOME/personal/conf/shenv-personal"
 
 if [ -z "$CONFIGDIR" ]; then
