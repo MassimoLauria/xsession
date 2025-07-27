@@ -1,6 +1,6 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2025-07-27, 18:45 (CEST) Massimo Lauria>
+# Time-stamp: <2025-07-27, 20:52 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
@@ -226,6 +226,12 @@ bindsym $mod+XF86AudioMute        $togglesound
 bindsym $mod+KP_Add      $raisevolume
 bindsym $mod+KP_Subtract $lowervolume
 bindsym $mod+KP_Divide   $togglesound
+
+## Screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl 5%-
+
+
 
 
 # Media player controls
