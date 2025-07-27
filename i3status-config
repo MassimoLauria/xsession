@@ -19,6 +19,7 @@ order += "ethernet _first_"
 order += "wireless _first_"
 # order += "path_exists VPN"
 order += "tztime local"
+order += "battery 0"
 order += "volume master"
 
 ethernet _first_ {
@@ -58,4 +59,14 @@ volume master {
     format = "🔊 %volume"
     format_muted = "🔇 %volume"
     min_width = "🔊 000%"
+}
+
+battery 0 {
+  format = " %status %percentage"
+  format_down = ""
+  status_bat ="🔋"
+  status_chr ="🔌"
+  low_threshold = 30
+  threshold_type = percentage
+  integer_battery_capacity = true
 }
