@@ -1,13 +1,13 @@
 # -*- mode: conf -*-
 # i3 config file (v4)
-# Time-stamp: <2025-07-27, 18:38 (CEST) Massimo Lauria>
+# Time-stamp: <2025-07-27, 18:45 (CEST) Massimo Lauria>
 
 # See http://i3wm.org/docs/userguide.html for help!
 
 set $mod Mod4
 
 #Paths
- --recursive --randomize "$HOME/personal/wallpaper/aspect169/"
+set $bgcmd feh --image-bg '#333' --bg-fill --recursive --randomize "$HOME/personal/wallpaper/aspect169/"
 set $autostartpath ~/config/xsession/autostart/
 set $lockscreencmd ~/config/xsession/lockscreen.sh
 set $screenshot import -window root ~/`date +%Y%m%d_%H%M%S_screenshot.jpg`
