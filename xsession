@@ -15,6 +15,7 @@ xset s off
 xrandr --output DP-2 --off 2>| /dev/null
 unclutter -root -idle 5 &
 [ -f ~/config/xsession/xresources ] && xrdb -merge ~/config/xsession/xresources
+[ -f ~/.xresources.local ]          && xrdb -merge ~/.xresources.local
 
 # setup us keyboard with additional character.
 # standard PC layout + accented vowels and composition
