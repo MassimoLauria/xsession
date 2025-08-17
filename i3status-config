@@ -52,20 +52,21 @@ cpu_temperature 0 {
     }
 
 disk "/" {
-        format = "Free %avail"
+        format = "🖴 %avail"
 }
 
 volume master {
-    format = "🔊 %volume"
-    format_muted = "🔇 %volume"
-    min_width = "🔊 000%"
+    format = "🔊%volume"
+    format_muted = "🔇%volume"
+    min_width = "🔊000%"
 }
 
 battery 0 {
-  format = " %status %percentage"
+  format = "%status%percentage"
   format_down = ""
   status_bat ="🔋"
   status_chr ="🔌"
+  status_full ="🔋"
   low_threshold = 30
   threshold_type = percentage
   integer_battery_capacity = true
