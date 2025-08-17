@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Tuxedo Control Center
+GenericName=Tuxedo Control Center
+Comment=Launch Tuxedo Control Center
+Icon=tuxedo
+Categories=System;
+Exec=tuxedo-control-center --tray
+TryExec=tuxedo-control-center
+Terminal=false
+X-GNOME-Autostart-Delay=3
