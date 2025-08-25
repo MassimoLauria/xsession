@@ -27,5 +27,9 @@ umask 0077
 # Various env variables to improve experience.
 export SDL_MOUSE_RELATIVE=0
 
+# Machine dependent setup
+[ -f ~/.xsession.local ] && source ~/.xsession.local
+
+
 # Start session
 exec i3

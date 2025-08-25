@@ -1,11 +1,10 @@
-// Save this file in $XDG_CONFIG_HOME/xkb/symbols/
 // Like a US layout has accented chars, and stuff like that
 
 partial alphanumeric_keys
 xkb_symbols "massimo" {
 
     include "us(basic)"
-    name[Group1]= "English (Massimo's US Layout)";
+    name[Group1]= "Massimo custom Layout";
     key.type[group1]="FOUR_LEVEL";
 
     // Prefferred by Massimo Lauria 

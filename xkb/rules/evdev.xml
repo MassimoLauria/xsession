@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- Put it in file $XDG_CONFIG_HOME/xkb/rules/evdev.xml -->
 <!DOCTYPE xkbConfigRegistry SYSTEM "xkb.dtd">
 <xkbConfigRegistry version="1.1">
   <layoutList>
@@ -9,7 +7,15 @@
         <name>massimo</name>
         <!-- Keyboard indicator for English layouts -->
         <shortDescription>mxl</shortDescription>
-        <description>English (Massimo's US Layout)</description>
+        <description>English (Massimo custom Layout)</description>
+        <countryList>
+          <iso3166Id>US</iso3166Id>
+          <iso3166Id>IT</iso3166Id>
+        </countryList>
+        <languageList>
+          <iso639Id>eng</iso639Id>
+          <iso639Id>ita</iso639Id>
+        </languageList>
       </configItem>
     </layout>
   </layoutList>

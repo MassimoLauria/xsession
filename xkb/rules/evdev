@@ -1,0 +1,4 @@
+! option   = symbols
+  massimo:massimo  = +massimo(massimo)
+
+! include %S/evdev
